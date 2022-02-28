@@ -1,24 +1,58 @@
 <template>
-    <div id="work">
-        <section id="sideBar">
-            <p>Vi-Motiv</p>
-            <p>Manga Quizz</p>
-            <p>enigma</p>
+    <div id="wrapper">
+        <section id="Title">
+            <ul>
+                <li 
+                    v-for="tl in title" 
+                    :key="tl"
+                    class="letters"
+                    >
+                    <h1> {{ tl }} </h1>
+                </li>
+            </ul>
+
+            <nav-bar 
+                id="nav"
+                :home="navbar.home"
+                :resume="navbar.resume"
+                :contact="navbar.contact"></nav-bar>
+
         </section>
+
         <div class="content">
             <img src="../../public/Vi-Motiv.png" alt="Logo Vi-Motiv">
-            <p class="workDescription">vi motiv vi vi vi vi vi </p>
+            <p class="projectDescription" v-if="french">Vi Motiv is a personnal project about productivity and coding. Using Api calls, form submission and authentification to showcase what I learned during my Openclassroom course as a fullstack developper.</p>
+            <p class="projectDescription" v-else> Vi motiv est un projet personnel sur la productivité et le développement. Utilisant des appels Api, soumissions de formulaires et authentification pour présenter ce que j'ai pu apprendre durant mon formation avec Openclassroom en tant que développeur Fullstack.</p>
+
+            <h2>tech</h2>
+            <div class="logo">
+                <img src="../assets/vuejs.png" alt="Vue.js logo">
+                <img src="../assets/javascript.png" alt="javascript logo">
+                <img src="../assets/nodejs.png" alt="node.js logo">
+                <img src="../assets/express.png" alt="express.js logo">
+                <img src="../assets/mysql.png" alt="mysql logo">
+            </div>
         </div>
     </div>
-
 </template>
 
 
 <script>
+import navBar from './UI/navBar.vue'
 export default {
+    components: {
+        navBar
+    },
     data() {
         return {
-
+            title: ['W', 'O', 'R', 'K'],
+            french: true,
+            navbar: {
+                home: 'Home',
+                work: 'Work',
+                resume: 'Resume',
+                contact: 'Contact'
+            }
         }
     }
 }
@@ -26,40 +60,81 @@ export default {
 
 
 <style scoped>
-#work {
-    width: 90%;
-    border: crimson 4px solid;
+@font-face {
+    font-family: 'Monoton';
+    src: url('../assets/Monoton-Regular.ttf');
+}
+#wrapper {
+    width: 100vw;
+    animation: pageUp 1.5s forwards;
+    background: rgb(239,228,221);
+    background: linear-gradient(90deg, rgba(239,228,221,1) 43%, rgba(255,255,255,1) 88%);
+}
+#Title {
+    width: 100%;
+    border: solid red 1px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    font-family: Monoton;
+    font-size: 4vw;
+    padding: 0;
+}
+.content {
+    width: 70vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5%;
+}
+.projectDescription {
+    width: 80%;
+    margin: 0 auto;
+
+}
+.logo {
     display: flex;
     flex-direction: row;
 }
-#sideBar {
+.logo img {
+    width: 15%;
+}
+img {
+    width: 30vw;
+    margin: 0 auto;
+}
+ul {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 20%;
-    border: black 4px solid;
+    flex-direction: row;
 }
-.content {
-    width: 80%;
-    text-align: center;
-    border: cadetblue 4px solid;
+li {
+    list-style: none;
 }
-#sideBar p {
-    background-color: rgb(226, 214, 207);
-    padding: 10%;
+#nav {
+    font-size: 2vw;
 }
-#sideBar p:hover {
-    animation: workButtons 1s forwards;
-}
+.letters:hover {
+    animation: letters 0.5s ease-in-out
+ }
 
-@keyframes workButtons {
-  to {
-    padding: 15%;
-    border-radius: 10%;
-    background-color: black;
-    font-size: large;
-    font-weight: bold;
-    color: rgb(228, 166, 127)
-  }
+@keyframes pageUp {
+    from {
+        transform: translateY(100vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+@keyframes letters {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-1vh);
+        color: rgb(31, 29, 29);
+    }
 }
 </style>

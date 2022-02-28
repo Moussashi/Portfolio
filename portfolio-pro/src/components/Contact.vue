@@ -1,5 +1,14 @@
 <template>
-    <h1>Contact Me</h1>
+<div id="wrapper">
+    <div id="Title">
+        <h1>CONTACT</h1>
+        <nav-bar 
+                id="nav"
+                :home="navbar.home"
+                :resume="navbar.resume"
+                :work="navbar.work">
+        </nav-bar>
+    </div>
 
     <section id="contact">
         <Form>
@@ -14,15 +23,55 @@
 
             <button> Let's Talk </button>
         </Form>
-        <img src="../../public/map.png" alt="map of reunion island">
+        <!--<img src="../../public/map.png" alt="map of reunion island"> -->
+       
+            <custom-map id="map"></custom-map>
     </section>
 
-
+</div>
 </template>
 
+<script>
+import CustomMap from './Map.vue'
+import navBar from './UI/navBar.vue'
+export default {
+    components: { CustomMap, navBar },
+    data() {
+        return {
+            navbar: {
+                home: 'Home',
+                work: 'Work',
+                resume: 'Resume',
+                contact: 'Contact'
+            }
+        }
+    }
+}
+</script>
+
 <style scoped>
+@font-face {
+    font-family: 'Monoton';
+    src: url('../assets/Monoton-Regular.ttf');
+}
+#wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(239,228,221);
+    background: linear-gradient(90deg, rgba(239,228,221,1) 43%, rgba(255,255,255,1) 88%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#Title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-family: Monoton;
+    color: black;
+}
 h1 {
-  color: rgb(239, 228, 221);
   font-size: 3em;
   text-align: center;
   margin-bottom: 0;
@@ -58,7 +107,9 @@ img {
 img:hover {
     animation: mapGrow 0.3s forwards;
 }
-
+#map {
+    width: 60%;
+}
 @keyframes buttonHov {
     100% {
         width: 100%;
