@@ -158,5 +158,8 @@ img:hover {
     form {
         width: 70%;
     }
+    #nav {
+        font-size: 1.5rem;
+    }
 }
 </style>

@@ -72,10 +72,10 @@ export default {
 }
 #Title {
     width: 100%;
-    border: solid red 1px;
     text-align: center;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin: 0 auto;
     font-family: Monoton;
     font-size: 4vw;
@@ -86,9 +86,10 @@ export default {
     background-color: white;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: auto;
     text-align: center;
     padding: 5%;
+    border: 2px black solid;
 }
 .projectDescription {
     width: 80%;
@@ -109,6 +110,7 @@ img {
 ul {
     display: flex;
     flex-direction: row;
+    padding: 0;
 }
 li {
     list-style: none;
@@ -135,6 +137,15 @@ li {
     to {
         transform: translateY(-1vh);
         color: rgb(31, 29, 29);
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    #Title {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+        border: 0;
     }
 }
 </style>

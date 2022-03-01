@@ -85,8 +85,14 @@ li {
     list-style: none;
     color: black;
 }
+a {
+    font-size: 1.5rem;
+}
 a:visited {
     color: black;
+}
+a:hover {
+    background-color: white;
 }
 .icon {
     background-color: white;
@@ -106,6 +112,12 @@ a:visited {
     }
     to {
         opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    .icon {
+        font-size: 5vw;
     }
 }
 </style>

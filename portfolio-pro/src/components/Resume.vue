@@ -143,6 +143,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
 h3 {
     font-size: 2vw;
