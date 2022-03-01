@@ -97,6 +97,7 @@ button:hover {
 #contact {
     display: flex;
     justify-content: space-between;
+    height: 50vh;
 }
 form {
     width: 30%;
@@ -134,5 +135,11 @@ img:hover {
     to {
         width: 40%;
     }
+}
+/*********************************
+**********RESPONSIVE**************
+**********************************/
+@media only screen and (max-width: 769px) {
+    
 }
 </style>
