@@ -140,6 +140,23 @@ img:hover {
 **********RESPONSIVE**************
 **********************************/
 @media only screen and (max-width: 769px) {
-    
+    #Title {
+        display: flex;
+        flex-direction: column;
+    }
+    #contact {
+        display: flex;
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+    }
+    #map {
+        width: 80%;
+        height: 80%;
+        border: black 1px solid;
+    }
+    form {
+        width: 70%;
+    }
 }
 </style>
