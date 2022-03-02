@@ -10,9 +10,9 @@
         <img src="../assets/triforce.png" v-if="!triforceFull" :class="leave" id="triforce" @click="toggleButton()" alt="triforce image">
         <img src="../assets/triforceFull.png" v-else id="triforceFull" @click="toggleButton()" alt="full triforce image">
         <div class="components" v-if="triforceFull">
-          <router-link to="/portfolio/work"> <p>Work</p> </router-link>
-          <router-link to="/portfolio/resume"> <p>Resume</p> </router-link>
-          <router-link to="/portfolio/contact"> <p>Contact</p> </router-link>
+          <router-link to="/Portfolio/work"> <p>Work</p> </router-link>
+          <router-link to="/Portfolio/resume"> <p>Resume</p> </router-link>
+          <router-link to="/Portfolio/contact"> <p>Contact</p> </router-link>
         </div>
       </div>
     </nav>
