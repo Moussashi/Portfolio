@@ -7,12 +7,12 @@ import Contact from './components/Contact.vue'
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        {path: '/', redirect: '/Portfolio/home'},
-        {path: '/Portfolio', redirect: '/Portfolio/home'},
-        {path: '/Portfolio/home', component: Home},
-        {path: '/Portfolio/resume', component: Resume},
-        {path: '/Portfolio/work', component: Work},
-        {path: '/Portfolio/contact', component: Contact},
+        {path: '/', redirect: '/portfolio/home'},
+        {path: '/portfolio', redirect: '/portfolio/home'},
+        {path: '/portfolio/home', component: Home},
+        {path: '/portfolio/resume', component: Resume},
+        {path: '/portfolio/work', component: Work},
+        {path: '/portfolio/contact', component: Contact},
     ]
 })
 

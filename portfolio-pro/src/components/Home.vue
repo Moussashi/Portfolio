@@ -10,9 +10,9 @@
         <img src="../assets/triforce.png" v-if="!triforceFull" :class="leave" id="triforce" @click="toggleButton()" alt="triforce image">
         <img src="../assets/triforceFull.png" v-else id="triforceFull" @click="toggleButton()" alt="full triforce image">
         <div class="components" v-if="triforceFull">
-          <router-link to="/Portfolio/work"> <p>Work</p> </router-link>
-          <router-link to="/Portfolio/resume"> <p>Resume</p> </router-link>
-          <router-link to="/Portfolio/contact"> <p>Contact</p> </router-link>
+          <router-link to="/portfolio/work"> <p>Work</p> </router-link>
+          <router-link to="/portfolio/resume"> <p>Resume</p> </router-link>
+          <router-link to="/portfolio/contact"> <p>Contact</p> </router-link>
         </div>
       </div>
     </nav>
@@ -65,14 +65,14 @@ export default {
   font-size: 3em;
   text-align: center;
   margin-bottom: 0;
-  animation: arrival 2s forwards;
+  animation: arrival 3s forwards;
 }
 #title {
   color: rgb(239, 228, 221);
   font-size: 1.5rem;
   text-align: center;
   margin-top: 0;
-  animation: arrival 3s forwards;
+  animation: arrival 4s forwards;
 
 }
 .navigation {
@@ -112,12 +112,10 @@ p:hover {
   margin: 0 auto;
   animation: arrival 1s ease-in-out;
 }
-.leave {
-  animation: leaveY 1s forwards;
-}
+
 @keyframes arrival {
   from {
-    opacity: 0;
+    opacity: 0.5;
   }
   to {
     opacity: 1;
@@ -125,7 +123,7 @@ p:hover {
 }
 @keyframes arrivalY {
   from {
-    transform: translateY(-150px);
+    transform: translateY(-250px);
     opacity: 0;
   }
   to {

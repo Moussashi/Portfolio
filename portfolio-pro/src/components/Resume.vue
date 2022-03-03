@@ -41,6 +41,11 @@
                     <button @click="toggleLang"> {{ language }} </button>
             </section>
         </div>
+
+        <section id="skills">
+                <h2>Skills ?</h2>
+        </section>
+        
     </div>
 
 </template>

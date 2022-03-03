@@ -2,7 +2,7 @@
   "name": "portfolio-pro",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://moussashi.github.io/Portfolio/",
+  "homepage": "https://moussashi.github.io/portfolio/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

@@ -11,23 +11,23 @@
     </div>
 
     <section id="contact">
-        <Form>
+        <Form action="https://formsubmit.co/sy.moussa04@gmail.com" method="POST">
             <label for="Name">Your Name</label>
-            <input type="text" required>
+            <input type="text" name="name" required>
 
             <label for="Name">Email Adress</label>
-            <input type="email" required>
+            <input type="email" name="email" required>
 
-            <label for="Name">Message</label>
-            <textarea type="text" cols="60" rows="8" placeholder="Insert your message here" required></textarea>
+            <label for="message">Message</label>
+            <textarea type="text" name="message" cols="60" rows="8" placeholder="Insert your message here" required></textarea>
 
-            <button> Let's Talk </button>
+            <button type="submit" @click="submitMail"> Let's Talk </button>
         </Form>
         <!--<img src="../../public/map.png" alt="map of reunion island"> -->
        
             <custom-map id="map"></custom-map>
     </section>
-
+    <p v-if="thanks"> {{ message }} </p>
 </div>
 </template>
 
@@ -42,8 +42,21 @@ export default {
                 home: 'Home',
                 work: 'Work',
                 resume: 'Resume',
-                contact: 'Contact'
+                contact: 'Contact',
+                thanks: false,
+                message: 'Thank you, I will respond as soon as possible'
             }
+        }
+    },
+    methods: {
+        submitMail() {
+            this.thanks = true
+
+            const redirect = () => {
+                this.$router.push('/portfolio/home')
+            }
+
+            setTimeout(redirect, 1000)
         }
     }
 }

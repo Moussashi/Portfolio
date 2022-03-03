@@ -24,6 +24,13 @@
             <p class="projectDescription" v-if="french">Vi Motiv is a personnal project about productivity and coding. Using Api calls, form submission and authentification to showcase what I learned during my Openclassroom course as a fullstack developper.</p>
             <p class="projectDescription" v-else> Vi motiv est un projet personnel sur la productivité et le développement. Utilisant des appels Api, soumissions de formulaires et authentification pour présenter ce que j'ai pu apprendre durant mon formation avec Openclassroom en tant que développeur Fullstack.</p>
 
+            <div class="captures">
+                <img src="../assets/vi-motiv-website1.png" alt="">
+                <img src="../assets/vi-motiv-website3.png" alt="">
+                <img src="../assets/vi-motiv-website2.png" alt="">
+                <img src="../assets/vi-motiv-website4.png" alt="">
+            </div>
+
             <h2>tech</h2>
             <div class="logo">
                 <img src="../assets/vuejs.png" alt="Vue.js logo">
@@ -31,6 +38,23 @@
                 <img src="../assets/nodejs.png" alt="node.js logo">
                 <img src="../assets/express.png" alt="express.js logo">
                 <img src="../assets/mysql.png" alt="mysql logo">
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Portrait Photography</h2>
+            <p>by me</p>
+            <p class="projectDescription" v-if="french">Vi Motiv is a personnal project about productivity and coding. Using Api calls, form submission and authentification to showcase what I learned during my Openclassroom course as a fullstack developper.</p>
+            <p class="projectDescription" v-else> Vi motiv est un projet personnel sur la productivité et le développement. Utilisant des appels Api, soumissions de formulaires et authentification pour présenter ce que j'ai pu apprendre durant mon formation avec Openclassroom en tant que développeur Fullstack.</p>
+            <div class="captures">
+                <img src="../assets/portraitwebsite1.png" alt="">
+                <img src="../assets/portraitwebsite2.png" alt="">
+            </div>
+
+            <h2>tech</h2>
+            <div class="logo">
+                <img src="../assets/vuejs.png" alt="Vue.js logo">
+                <img src="../assets/javascript.png" alt="javascript logo">
             </div>
         </div>
     </div>
@@ -91,10 +115,19 @@ export default {
     padding: 5%;
     border: 2px black solid;
 }
+.captures {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.captures img {
+    width: 70%;
+    margin-top: 1%;
+}
 .projectDescription {
     width: 80%;
     margin: 0 auto;
-
+    padding: 5%;
 }
 .logo {
     display: flex;

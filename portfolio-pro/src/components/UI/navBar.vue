@@ -9,10 +9,10 @@
                 @enter="navAppear"
             >
             <ul>
-                <router-link to="/Portfolio/home"> {{ home }} </router-link>
-                <router-link to="/Portfolio/work"> {{ work }} </router-link>
-                <router-link to="/Portfolio/contact"> {{ contact }} </router-link>
-                <router-link to="/Portfolio/resume"> {{ resume }} </router-link>
+                <router-link to="/portfolio/home"> {{ home }} </router-link>
+                <router-link to="/portfolio/work"> {{ work }} </router-link>
+                <router-link to="/portfolio/contact"> {{ contact }} </router-link>
+                <router-link to="/portfolio/resume"> {{ resume }} </router-link>
             </ul>
         </transition>
         </div>
