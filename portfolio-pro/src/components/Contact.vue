@@ -11,7 +11,7 @@
     </div>
 
     <section id="contact">
-        <Form action="https://formsubmit.co/sy.moussa04@gmail.com" method="POST">
+        <Form action="https://formsubmit.co/s4c4c1af5e6570c4d4520dbc52ce9bde2" method="POST">
             <label for="Name">Your Name</label>
             <input type="text" name="name" required>
 
@@ -23,7 +23,8 @@
 
             <button type="submit" @click="submitMail"> Let's Talk </button>
         </Form>
-        <!--<img src="../../public/map.png" alt="map of reunion island"> -->
+        
+        <!-- THE LEAFLET MAP -->
        
             <custom-map id="map"></custom-map>
     </section>

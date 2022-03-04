@@ -1,4 +1,5 @@
 <template>
+<!--  -->
   <div class="content">
       <router-view v-slot="{ Component, route }">
           <transition name="fade" mode="out-in">
@@ -21,9 +22,9 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 5%;
   font-family: 'Courier New', Courier, monospace;
-}  .fade-enter-from {
+}  
+  .fade-enter-from {
     opacity: 0;
     transform: translateX(100px);
   }

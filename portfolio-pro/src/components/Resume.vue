@@ -24,11 +24,11 @@
             <img class="CV" src="../../public/CVpro.png" alt="CV developpeur front-end Moussa Sy">
             <section id="description"> 
                 <div v-if="!english">
-                    <p>Développeur Front-end de Paris, résidant à l’ile de la Reunion. Ancien photographe professionnel, créer du contenu attractif est une passion et trouver des moyens d’être plus productif chaque jours est une mission. Choisir une personne qui a trouvé sa voie n’est jamais un mauvais choix.</p>
+                    <p>Développeur Front-end de Paris, résidant à l’ile de la Reunion. En tant qu'ancien photographe professionnel, créer du contenu attractif est une passion et trouver des moyens d’être plus productif chaque jours est une mission. Choisir une personne qui a trouvé sa voie n’est jamais un mauvais choix.</p>
                 </div>
 
                 <div v-else>
-                    <p>Front-end developper from Paris, currently living in Reunion island. Former professionnal photographer, creating attractive content is a passion and finding ways to be more productive everyday is a mission. Choosing someone who found his way is never a bad choice.</p>
+                    <p>Front-end developper from Paris, currently living in Reunion island. As a former professionnal photographer, creating attractive content is a passion and finding ways to be more productive everyday is a mission. Choosing someone who found his way is never a bad choice.</p>
                 </div>
 
                 <h3>interests</h3>
@@ -42,10 +42,73 @@
             </section>
         </div>
 
-        <section id="skills">
-                <h2>Skills ?</h2>
+        <section id="skillName">
+            <div class="nameS">
+                <h3>Frontend</h3>
+                <p>Html/css/javascript</p>
+            </div>
+            <div class="nameS">
+                <h3>Backend</h3>
+                <p>Node.js/express/sql</p>
+            </div>
+            <div class="nameS">
+                <h3>Vue.js</h3>
+            </div>
         </section>
-        
+
+        <section id="Skills">      
+                <div class="skill">
+                    <div class="outer">
+                        <div class="inner">
+                            <div id="number"> {{ number.frontend }} </div>
+                        </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg"  class="circle1" version="1.1" width="160px" height="160px">
+                        <defs>
+                            <linearGradient id="GradientColor">
+                            <stop offset="0%" stop-color="#e91e63" />
+                            <stop offset="100%" stop-color="#673ab7" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                    </svg>
+                </div>
+
+                <div class="skill">
+                    <div class="outer">
+                        <div class="inner">
+                            <div id="number"> {{ number.backend }} </div>
+                        </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg"  class="circle2" version="1.1" width="160px" height="160px">
+                        <defs>
+                            <linearGradient id="GradientColor">
+                            <stop offset="0%" stop-color="#e91e63" />
+                            <stop offset="100%" stop-color="#673ab7" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                    </svg>
+                </div>
+
+                <div class="skill">
+                    <div class="outer">
+                        <div class="inner">
+                            <div id="number"> {{ number.vue }} </div>
+                        </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg"  class="circle3" version="1.1" width="160px" height="160px">
+                        <defs>
+                            <linearGradient id="GradientColor">
+                            <stop offset="0%" stop-color="#e91e63" />
+                            <stop offset="100%" stop-color="#673ab7" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                    </svg>
+                </div>
+
+        </section>
     </div>
 
 </template>
@@ -65,8 +128,13 @@ export default {
                 home: 'Home',
                 work: 'Work',
                 resume: 'Resume',
-                contact: 'Contact'
-            }
+                contact: 'Contact',
+            },
+            number: {
+                    frontend: null,
+                    backend: null,
+                    vue: null,
+                }
         }
     },
     methods: {
@@ -78,7 +146,45 @@ export default {
             } else {
                 this.language = 'Switch to English'
             }
+        },
+        displayNumber() {
+            let counterFront = 0;
+            let counterBack = 0;
+            let counterVue = 0;
+
+            //Frontend
+            setInterval(() => {
+                if (counterFront == 80) {
+                    clearInterval()
+                } else {
+                    counterFront++
+                    this.number.frontend = counterFront + '%'
+                }
+            }, 25)
+
+            //Backend
+            setInterval(() => {
+                if (counterBack == 65) {
+                    clearInterval()
+                } else {
+                    counterBack++
+                    this.number.backend = counterBack + '%'
+                }
+            }, 30)
+
+            //vue.js
+            setInterval(() => {
+                if (counterVue == 85) {
+                    clearInterval()
+                } else {
+                    counterVue++
+                    this.number.vue = counterVue + '%'
+                }
+            }, 23)
         }
+    },
+    mounted() {
+       this.displayNumber()
     }
 }
 </script>
@@ -165,6 +271,99 @@ li {
 li:hover {
     animation: letters 0.5s forwards;
 }
+
+/**************************
+********skills*************
+****************************/
+
+#Skills {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 20vh;
+}
+#skillName {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 10vh;
+}
+
+.skill {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.outer {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                -6px -6px 5px -1px rgba(255,255,255,0.7);
+}
+.inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+                inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+                -0.5px -0.5px 0px rgba(255,255,255,1),
+                0.5px 0.5px 0px rgba(0,0,0,0.15),
+                0px 12px 10px -10px rgba(0,0,0,0.05);
+                
+}
+#number {
+    font-weight: 500px;
+}
+circle {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472; /*makes a part hidden*/
+    animation: skillAnim 2s linear forwards;
+}
+.circle1 circle {
+    animation: skillAnim 2s linear forwards;
+}
+.circle2 circle {
+    animation: skillAnim2 2s linear forwards;
+}
+.circle3 circle {
+    animation: skillAnim3 2s linear forwards;
+}
+svg {
+    position: absolute;
+}
+
+@keyframes skillAnim {
+    100% {
+        stroke-dashoffset: 95;
+    }
+}
+@keyframes skillAnim2 {
+    100% {
+        stroke-dashoffset: 165;
+    }
+}
+@keyframes skillAnim3 {
+    100% {
+        stroke-dashoffset: 71;
+    }
+}
+
 
 /************************************
 ************* Animations ************
