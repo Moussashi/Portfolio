@@ -1,5 +1,6 @@
 <template>
     <div id="wrapper">
+        <!-- Title -->
         <section id="Title">
             <ul>
                 <li 
@@ -9,8 +10,9 @@
                     >
                     <h1> {{ tl }} </h1>
                 </li>
-            </ul>
+            </ul>  
 
+            <!-- Navigation Bar -->
             <nav-bar 
                 id="nav"
                 :home="navbar.home"
@@ -19,16 +21,18 @@
 
         </section>
 
+        <!-- Projects -->
+        
+        <!-- Vi motiv -->
         <div class="content">
             <img src="../../public/Vi-Motiv.png" alt="Logo Vi-Motiv">
-            <p class="projectDescription" v-if="french">Vi Motiv is a personnal project about productivity and coding. Using Api calls, form submission and authentification to showcase what I learned during my Openclassroom course as a fullstack developper.</p>
-            <p class="projectDescription" v-else> Vi motiv est un projet personnel sur la productivité et le développement. Utilisant des appels Api, soumissions de formulaires et authentification pour présenter ce que j'ai pu apprendre durant mon formation avec Openclassroom en tant que développeur Fullstack.</p>
+            <p class="projectDescription" >Vi Motiv is a personnal project about productivity and coding. Using Api calls, form submission and authentification to showcase what I learned during my Openclassroom course as a fullstack developper.</p>
 
             <div class="captures">
-                <img src="../assets/vi-motiv-website1.png" alt="">
-                <img src="../assets/vi-motiv-website3.png" alt="">
-                <img src="../assets/vi-motiv-website2.png" alt="">
-                <img src="../assets/vi-motiv-website4.png" alt="">
+                <img src="../assets/vi-motiv-website1.png" alt="Vi-motiv screenshots">
+                <img src="../assets/vi-motiv-website3.png" alt="Vi-motiv screenshots">
+                <img src="../assets/vi-motiv-website2.png" alt="Vi-motiv screenshots">
+                <img src="../assets/vi-motiv-website4.png" alt="Vi-motiv screenshots">
             </div>
 
             <h2>tech</h2>
@@ -41,14 +45,14 @@
             </div>
         </div>
 
+        <!-- Portraits -->
         <div class="content">
             <h2>Portrait Photography</h2>
             <p>by me</p>
-            <p class="projectDescription" v-if="french">Vi Motiv is a personnal project about productivity and coding. Using Api calls, form submission and authentification to showcase what I learned during my Openclassroom course as a fullstack developper.</p>
-            <p class="projectDescription" v-else> Vi motiv est un projet personnel sur la productivité et le développement. Utilisant des appels Api, soumissions de formulaires et authentification pour présenter ce que j'ai pu apprendre durant mon formation avec Openclassroom en tant que développeur Fullstack.</p>
+            <p class="projectDescription">Simple website with photos I shot as a photographer. Displayed horizontaly.</p>
             <div class="captures">
-                <img src="../assets/portraitwebsite1.png" alt="">
-                <img src="../assets/portraitwebsite2.png" alt="">
+                <img src="../assets/portraitwebsite1.png" alt="screenshot of my portrait photography website">
+                <img src="../assets/portraitwebsite2.png" alt="screenshot of my portrait photography website">
             </div>
 
             <h2>tech</h2>
@@ -153,7 +157,11 @@ li {
 }
 .letters:hover {
     animation: letters 0.5s ease-in-out
- }
+}
+
+/*********************************************
+****************ANIMATIONS********************
+**********************************************/
 
 @keyframes pageUp {
     from {
@@ -173,6 +181,9 @@ li {
     }
 }
 
+/*********************************************
+************RESPONSIVE************************
+**********************************************/
 @media only screen and (max-width: 769px) {
     #Title {
         flex-direction: column;

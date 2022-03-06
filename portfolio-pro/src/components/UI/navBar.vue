@@ -11,8 +11,8 @@
             <ul>
                 <router-link to="/portfolio/home"> {{ home }} </router-link>
                 <router-link to="/portfolio/work"> {{ work }} </router-link>
-                <router-link to="/portfolio/contact"> {{ contact }} </router-link>
                 <router-link to="/portfolio/resume"> {{ resume }} </router-link>
+                <router-link to="/portfolio/contact"> {{ contact }} </router-link>
             </ul>
         </transition>
         </div>

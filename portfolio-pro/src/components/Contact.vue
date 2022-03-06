@@ -11,7 +11,7 @@
     </div>
 
     <section id="contact">
-        <Form action="https://formsubmit.co/s4c4c1af5e6570c4d4520dbc52ce9bde2" method="POST">
+        <Form action="https://formsubmit.co/4c4c1af5e6570c4d4520dbc52ce9bde2" method="POST">
             <label for="Name">Your Name</label>
             <input type="text" name="name" required>
 
@@ -161,12 +161,13 @@ img:hover {
     #contact {
         display: flex;
         width: 100vw;
+        height: 70vh;
         flex-direction: column;
         align-items: center;
     }
     #map {
         width: 80%;
-        height: 80%;
+        height: 50vh;
         border: black 1px solid;
     }
     form {

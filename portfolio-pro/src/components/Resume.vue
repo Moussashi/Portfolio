@@ -24,11 +24,11 @@
             <img class="CV" src="../../public/CVpro.png" alt="CV developpeur front-end Moussa Sy">
             <section id="description"> 
                 <div v-if="!english">
-                    <p>Développeur Front-end de Paris, résidant à l’ile de la Reunion. En tant qu'ancien photographe professionnel, créer du contenu attractif est une passion et trouver des moyens d’être plus productif chaque jours est une mission. Choisir une personne qui a trouvé sa voie n’est jamais un mauvais choix.</p>
+                    <p>Développeur Front-end de Paris, résidant à l’ile de la Reunion. En tant qu'ancien photographe professionnel, créer du contenu attractif est une passion et trouver des moyens d’être plus productif chaque jours est une mission.</p>
                 </div>
 
                 <div v-else>
-                    <p>Front-end developper from Paris, currently living in Reunion island. As a former professionnal photographer, creating attractive content is a passion and finding ways to be more productive everyday is a mission. Choosing someone who found his way is never a bad choice.</p>
+                    <p>Front-end developper from Paris, currently living in Reunion island. As a former professionnal photographer, creating attractive content is a passion and finding ways to be more productive everyday is a mission.</p>
                 </div>
 
                 <h3>interests</h3>
@@ -42,72 +42,76 @@
             </section>
         </div>
 
-        <section id="skillName">
-            <div class="nameS">
-                <h3>Frontend</h3>
-                <p>Html/css/javascript</p>
-            </div>
-            <div class="nameS">
-                <h3>Backend</h3>
-                <p>Node.js/express/sql</p>
-            </div>
-            <div class="nameS">
-                <h3>Vue.js</h3>
-            </div>
-        </section>
-
-        <section id="Skills">      
-                <div class="skill">
-                    <div class="outer">
-                        <div class="inner">
-                            <div id="number"> {{ number.frontend }} </div>
-                        </div>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg"  class="circle1" version="1.1" width="160px" height="160px">
-                        <defs>
-                            <linearGradient id="GradientColor">
-                            <stop offset="0%" stop-color="#e91e63" />
-                            <stop offset="100%" stop-color="#673ab7" />
-                            </linearGradient>
-                        </defs>
-                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
-                    </svg>
+        <section id="skillWrapper">
+        
+            <section id="skillName">
+                <div class="nameS">
+                    <h4>Frontend</h4>
+                    <h6>Html/css/javascript</h6>
                 </div>
-
-                <div class="skill">
-                    <div class="outer">
-                        <div class="inner">
-                            <div id="number"> {{ number.backend }} </div>
-                        </div>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg"  class="circle2" version="1.1" width="160px" height="160px">
-                        <defs>
-                            <linearGradient id="GradientColor">
-                            <stop offset="0%" stop-color="#e91e63" />
-                            <stop offset="100%" stop-color="#673ab7" />
-                            </linearGradient>
-                        </defs>
-                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
-                    </svg>
+                <div class="nameS">
+                    <h4>Backend</h4>
+                    <h6>Node.js/express/sql</h6>
                 </div>
-
-                <div class="skill">
-                    <div class="outer">
-                        <div class="inner">
-                            <div id="number"> {{ number.vue }} </div>
-                        </div>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg"  class="circle3" version="1.1" width="160px" height="160px">
-                        <defs>
-                            <linearGradient id="GradientColor">
-                            <stop offset="0%" stop-color="#e91e63" />
-                            <stop offset="100%" stop-color="#673ab7" />
-                            </linearGradient>
-                        </defs>
-                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
-                    </svg>
+                <div class="nameS">
+                    <h4>Vue.js</h4>
                 </div>
+            </section>
 
+
+            <section id="Skills">      
+                    <div class="skill">
+                        <div class="outer">
+                            <div class="inner">
+                                <div id="number"> {{ number.frontend }} </div>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg"  class="circle1" version="1.1" width="160px" height="160px">
+                            <defs>
+                                <linearGradient id="GradientColor">
+                                <stop offset="0%" stop-color="#e91e63" />
+                                <stop offset="100%" stop-color="#673ab7" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                        </svg>
+                    </div>
+
+                    <div class="skill">
+                        <div class="outer">
+                            <div class="inner">
+                                <div id="number"> {{ number.backend }} </div>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg"  class="circle2" version="1.1" width="160px" height="160px">
+                            <defs>
+                                <linearGradient id="GradientColor">
+                                <stop offset="0%" stop-color="#e91e63" />
+                                <stop offset="100%" stop-color="#673ab7" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                        </svg>
+                    </div>
+
+                    <div class="skill">
+                        <div class="outer">
+                            <div class="inner">
+                                <div id="number"> {{ number.vue }} </div>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg"  class="circle3" version="1.1" width="160px" height="160px">
+                            <defs>
+                                <linearGradient id="GradientColor">
+                                <stop offset="0%" stop-color="#e91e63" />
+                                <stop offset="100%" stop-color="#673ab7" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                        </svg>
+                    </div>
+
+            </section>
         </section>
     </div>
 
@@ -348,6 +352,9 @@ svg {
     position: absolute;
 }
 
+/************************************
+************* Animations ************
+*************************************/
 @keyframes skillAnim {
     100% {
         stroke-dashoffset: 95;
@@ -363,11 +370,6 @@ svg {
         stroke-dashoffset: 71;
     }
 }
-
-
-/************************************
-************* Animations ************
-*************************************/
 
 @keyframes paragraphs {
     from {
@@ -400,7 +402,7 @@ svg {
 /************************************
 ************* RESPONSIVE*************
 *************************************/
-@media  only screen and (max-width: 769px) {
+@media only screen and (max-width: 769px) {
     #resume {
         display: flex;
         flex-direction: column;
@@ -410,7 +412,7 @@ svg {
         width: 80vw;
     }
 }
-@media  only screen and (min-width: 769px) {
+@media only screen and (min-width: 769px) {
     #description {
     display: flex;
     flex-direction: column;

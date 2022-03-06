@@ -1,5 +1,5 @@
 <template>
-<!--  -->
+<!-- Page Transition -->
   <div class="content">
       <router-view v-slot="{ Component, route }">
           <transition name="fade" mode="out-in">
