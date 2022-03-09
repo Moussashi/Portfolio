@@ -28,7 +28,7 @@
                 </div>
 
                 <div v-else>
-                    <p>Front-end developper from Paris, currently living in Reunion island. As a former professionnal photographer, creating attractive content is a passion and finding ways to be more productive everyday is a mission.</p>
+                    <p>Front-end developer from Paris, currently living in Reunion island. As a former professionnal photographer, creating attractive content is a passion and finding ways to be more productive everyday is a mission.</p>
                 </div>
 
                 <h3>interests</h3>
@@ -42,28 +42,16 @@
             </section>
         </div>
 
-        <section id="skillWrapper">
+        <button @click="toggleSkills()" class="myButton">Show Skills</button>
+
+        <section id="skillWrapper" v-if="showSkills">
         
-            <section id="skillName">
-                <div class="nameS">
-                    <h4>Frontend</h4>
-                    <h6>Html/css/javascript</h6>
-                </div>
-                <div class="nameS">
-                    <h4>Backend</h4>
-                    <h6>Node.js/express/sql</h6>
-                </div>
-                <div class="nameS">
-                    <h4>Vue.js</h4>
-                </div>
-            </section>
-
-
             <section id="Skills">      
                     <div class="skill">
                         <div class="outer">
                             <div class="inner">
-                                <div id="number"> {{ number.frontend }} </div>
+                                
+                                <div id="number"> frontend : {{ number.frontend }} </div>
                             </div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg"  class="circle1" version="1.1" width="160px" height="160px">
@@ -80,7 +68,7 @@
                     <div class="skill">
                         <div class="outer">
                             <div class="inner">
-                                <div id="number"> {{ number.backend }} </div>
+                                <div id="number"> backend : {{ number.backend }} </div>
                             </div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg"  class="circle2" version="1.1" width="160px" height="160px">
@@ -97,7 +85,7 @@
                     <div class="skill">
                         <div class="outer">
                             <div class="inner">
-                                <div id="number"> {{ number.vue }} </div>
+                                <div id="number"> Vue.js : {{ number.vue }} </div>
                             </div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg"  class="circle3" version="1.1" width="160px" height="160px">
@@ -138,7 +126,8 @@ export default {
                     frontend: null,
                     backend: null,
                     vue: null,
-                }
+            },
+            showSkills: false
         }
     },
     methods: {
@@ -185,6 +174,9 @@ export default {
                     this.number.vue = counterVue + '%'
                 }
             }, 23)
+        },
+        toggleSkills() {
+            this.showSkills = !this.showSkills
         }
     },
     mounted() {
@@ -303,6 +295,30 @@ li:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.myButton {
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color:#eae0c2;
+	border-radius:15px;
+	border:2px solid #333029;
+	display:inline-block;
+	cursor:pointer;
+	color:#505739;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:12px 16px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+	background-color:#ccc2a6;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
 }
 .outer {
     width: 160px;

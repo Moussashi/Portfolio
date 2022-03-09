@@ -33,7 +33,14 @@
                 <img src="../assets/vi-motiv-website3.png" alt="Vi-motiv screenshots">
                 <img src="../assets/vi-motiv-website2.png" alt="Vi-motiv screenshots">
                 <img src="../assets/vi-motiv-website4.png" alt="Vi-motiv screenshots">
+
             </div>
+            <video controls >
+                <source src="../assets/ViMotivVideo.mp4"
+                        type="video/mp4">
+
+                Sorry, your browser doesn't support embedded videos.
+            </video>
 
             <h2>tech</h2>
             <div class="logo">
@@ -55,10 +62,39 @@
                 <img src="../assets/portraitwebsite2.png" alt="screenshot of my portrait photography website">
             </div>
 
+            <video controls >
+                <source src="../assets/PortraitVideo.mp4"
+                        type="video/mp4">
+
+                Sorry, your browser doesn't support embedded videos.
+            </video>
+
             <h2>tech</h2>
             <div class="logo">
                 <img src="../assets/vuejs.png" alt="Vue.js logo">
                 <img src="../assets/javascript.png" alt="javascript logo">
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Groupomania</h2>
+            <p>Final project Openclassroom</p>
+            <p class="projectDescription">Final project of the Fullstack web developer course with openclassroom. Had to make a social media app for a company. Posting texts and images, creation of a profile with authentification</p>
+            
+            <video controls >
+                <source src="../assets/GroupomaniaVideo.mp4"
+                        type="video/mp4">
+
+                Sorry, your browser doesn't support embedded videos.
+            </video>
+
+            <h2>tech</h2>
+            <div class="logo">
+                <img src="../assets/vuejs.png" alt="Vue.js logo">
+                <img src="../assets/javascript.png" alt="javascript logo">
+                <img src="../assets/nodejs.png" alt="node.js logo">
+                <img src="../assets/express.png" alt="express.js logo">
+                <img src="../assets/mysql.png" alt="mysql logo">
             </div>
         </div>
     </div>
