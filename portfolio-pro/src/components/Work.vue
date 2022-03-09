@@ -36,7 +36,7 @@
 
             </div>
             <video controls >
-                <source src="../assets/ViMotivVideo.mp4"
+                <source src="../assets/ViMotiv.mp4"
                         type="video/mp4">
 
                 Sorry, your browser doesn't support embedded videos.
@@ -82,7 +82,7 @@
             <p class="projectDescription">Final project of the Fullstack web developer course with openclassroom. Had to make a social media app for a company. Posting texts and images, creation of a profile with authentification</p>
             
             <video controls >
-                <source src="../assets/GroupomaniaVideo.mp4"
+                <source src="../assets/Groupomania.mp4"
                         type="video/mp4">
 
                 Sorry, your browser doesn't support embedded videos.
