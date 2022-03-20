@@ -21,7 +21,7 @@
         </section>
 
         <div id="resume">
-            <img class="CV" src="../../public/CVpro.png" alt="CV developpeur front-end Moussa Sy">
+            <img class="CV" src="../../public/CV-frontend-SY.png" alt="CV developpeur front-end Moussa Sy">
             <section id="description"> 
                 <div v-if="!english">
                     <p>Développeur Front-end de Paris, résidant à l’ile de la Reunion. En tant qu'ancien photographe professionnel, créer du contenu attractif est une passion et trouver des moyens d’être plus productif chaque jours est une mission.</p>

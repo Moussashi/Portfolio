@@ -152,7 +152,3 @@ p:hover {
   }
 }
 </style>
-
-/* On click add a class to the buttons to recreate the hover final state*/
-
-/* same as above for the work component, to know wich one is active */

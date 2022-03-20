@@ -14,8 +14,11 @@
     "@fortawesome/free-solid-svg-icons": "^6.0.0",
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "core-js": "^3.6.5",
+    "dat.gui": "^0.7.9",
     "gsap": "^3.9.1",
     "leaflet": "^1.7.1",
+    "three": "^0.138.3",
+    "three-orbitcontrols": "^2.110.3",
     "vue": "^3.0.0",
     "vue-router": "^4.0.12"
   },
