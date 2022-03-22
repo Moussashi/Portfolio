@@ -30,6 +30,8 @@ export default {
     methods: {
         createCanvas() {
                         // GUI
+            //gui hidden
+            dat.GUI.toggleHide();
             const world = {
                 plane: {
                     width: 400,
@@ -39,10 +41,11 @@ export default {
                 }
             }
 
-            gui.add(world.plane, 'width', 1, 500).onChange(generatePlane)
-            gui.add(world.plane, 'height', 1, 500).onChange(generatePlane)
-            gui.add(world.plane, 'widthSegments', 1, 100).onChange(generatePlane)
-            gui.add(world.plane, 'heightSegments', 1, 100).onChange(generatePlane)
+            //gui.add(world.plane, 'width', 1, 500).onChange(generatePlane)
+            //gui.add(world.plane, 'height', 1, 500).onChange(generatePlane)
+            //gui.add(world.plane, 'widthSegments', 1, 100).onChange(generatePlane)
+            //gui.add(world.plane, 'heightSegments', 1, 100).onChange(generatePlane)
+            console.log(gui);
 
             function generatePlane() {
                 planeMesh.geometry.dispose()
