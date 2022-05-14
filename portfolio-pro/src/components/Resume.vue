@@ -20,87 +20,85 @@
 
         </section>
 
+        <!-- RESUME -->
+
+
         <div id="resume">
             <img class="CV" src="../../public/CV-frontend-SY.png" alt="CV developpeur front-end Moussa Sy">
             <section id="description"> 
                 <div v-if="!english">
-                    <p>Développeur Front-end de Paris, résidant à l’ile de la Reunion. En tant qu'ancien photographe professionnel, créer du contenu attractif est une passion et trouver des moyens d’être plus productif chaque jours est une mission.</p>
+                    <p>Développeur Front-end de Paris. En tant qu'ancien photographe professionnel, 
+                        créer du contenu attractif est une passion et trouver des moyens d’être plus 
+                        productif chaque jours est une mission. Après une formation réussie avec OpenClassrooms
+                        en tant que Développeur Web je continue de me former en UI/UX design et animations dans 
+                        le but d'atteindre un niveau Awwwards. Je suis ouvert à l'apprentissage de nouveaux frameworks
+                        ou languages. N'hésitez pas à me contacter, je suis disponible en remote ou sur site (Paris ou Toulouse).
+
+
+                    </p>
                 </div>
 
                 <div v-else>
-                    <p>Front-end developer from Paris, currently living in Reunion island. As a former professionnal photographer, creating attractive content is a passion and finding ways to be more productive everyday is a mission.</p>
+                    <p>Front-end developer from Paris. As a former professionnal photographer,
+                        creating attractive content is a passion and finding ways to be more 
+                        productive everyday is a mission. After a sucessful full course with 
+                        OpenClassrooms as a web developer I'm carrying on learning with UI/UX 
+                        design and animations to one day reach Awwards level. I'm open to learn
+                         new frameworks or programming languages. Do not hesitate to reach me, 
+                         I am available for a remote job or on site (Paris or Toulouse).</p>
                 </div>
+                
+                <button @click="toggleLang"> {{ language }} </button>
 
-                <h3>interests</h3>
-                <div id="galerie">
-                    <img src="../assets/astro.jpeg" alt="photo astronomie">
-                    <img src="../assets/bball.jpeg" alt="photo panier de basket ball">
-                    <img src="../assets/books.jpeg" alt="photo d'une bibliotheque">
-                    <img src="../assets/portrait.png" alt="photo de portrait">
-                </div>
-                    <button @click="toggleLang"> {{ language }} </button>
             </section>
-        </div>
 
-        <button @click="toggleSkills()" class="myButton">Show Skills</button>
-
-        <section id="skillWrapper" v-if="showSkills">
-        
-            <section id="Skills">      
-                    <div class="skill">
-                        <div class="outer">
-                            <div class="inner">
+                <section id="interests">
+                    <h2>interests</h2>
+                    <div id="galerie">
+                        <div class="galerieCard astro">
+                            <h3>Astronomie <fa class="icon" icon="meteor"/></h3>
+                            <p>Passion pour l'astronomie, suivi de l'actualité dans ce domaine 
+                                ainsi que pratique de l'astrophotographie au reflex. 
+                                Un amour de la photo de paysages qui s'est étendu au-delà de l'exosphère</p>
+                        </div>
+                        
+                        <div class="galerieCard bball">
+                            
+                            <div class="bballText books">
+                                <h3>Lecture  <fa class="icon" icon="book-open"/></h3>
+                                <p>Amoureux de livres policiers et fantastiques, Dan Brown
+                                    , Bernard Werber, Stephen King et tout particulièrement
+                                     J.K Rowling et la série Harry Potter <fa class="icon" icon="bolt"/></p>
                                 
-                                <div id="number"> frontend : {{ number.frontend }} </div>
                             </div>
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg"  class="circle1" version="1.1" width="160px" height="160px">
-                            <defs>
-                                <linearGradient id="GradientColor">
-                                <stop offset="0%" stop-color="#e91e63" />
-                                <stop offset="100%" stop-color="#673ab7" />
-                                </linearGradient>
-                            </defs>
-                            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
-                        </svg>
-                    </div>
 
-                    <div class="skill">
-                        <div class="outer">
-                            <div class="inner">
-                                <div id="number"> backend : {{ number.backend }} </div>
+                            <div class="bballText">
+                                <h3>Basket-Ball <fa class="icon" icon="basketball"/></h3>
+                                <p>Pratique active du basketball en compétition et pour le plaisir depuis 2003,
+                                    suivi régulier de l'actualité basket et du sport en général (football, boxe, arts martiaux).
+                                     Pratique d'art martiaux en club: boxe anglaise, Vo Vietnam, Hapkido, jiu jitsu brésilien
+                                </p>
+                                <img src="../assets/bballMe.jpeg" alt="Photographie de moi même en activitéz">
                             </div>
+                            
                         </div>
-                        <svg xmlns="http://www.w3.org/2000/svg"  class="circle2" version="1.1" width="160px" height="160px">
-                            <defs>
-                                <linearGradient id="GradientColor">
-                                <stop offset="0%" stop-color="#e91e63" />
-                                <stop offset="100%" stop-color="#673ab7" />
-                                </linearGradient>
-                            </defs>
-                            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
-                        </svg>
-                    </div>
-
-                    <div class="skill">
-                        <div class="outer">
-                            <div class="inner">
-                                <div id="number"> Vue.js : {{ number.vue }} </div>
+                        
+                        <div class="portrait">
+                            <div class="portraitImg">
+                                <h3 class="portraitTitle">Portraits <fa class="icon" icon="camera-retro"/></h3>
+                                <img src="../assets/portrait.png" alt="photo de portrait">
+                                <img src="../assets/img5.png" alt="photo de portrait">
+                                <img src="../assets/img12.png" alt="photo de portrait">
                             </div>
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg"  class="circle3" version="1.1" width="160px" height="160px">
-                            <defs>
-                                <linearGradient id="GradientColor">
-                                <stop offset="0%" stop-color="#e91e63" />
-                                <stop offset="100%" stop-color="#673ab7" />
-                                </linearGradient>
-                            </defs>
-                            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
-                        </svg>
-                    </div>
+                            <p>Ancien photographe professionnel, spécialisé dans le portrait et mariages. 
+                                Organisation d'une exposition dans le 15eme arrondissement de paris, 
+                                prochaine exposition en 2023... </p>
 
-            </section>
-        </section>
+                        </div>
+                    </div>
+                </section>
+
+        </div>
     </div>
 
 </template>
@@ -194,6 +192,9 @@ export default {
 .wrapper {
     top: 0;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100vw;
     animation: pageDown 2s forwards;
     background: rgb(239,228,221);
@@ -201,11 +202,21 @@ export default {
 }
 #resume {
     margin-top: 10vh;
+    width: 80vw;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+}
+#resume button {
+    -webkit-box-shadow: 13px 12px 15px 5px rgba(92,92,92,0.58); 
+    box-shadow: 13px 12px 15px 5px rgba(92,92,92,0.58);
+}
+#resume button:hover {
+    -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 13px 12px 15px 5px rgba(92,92,92,0); 
+    box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 13px 12px 15px 5px rgba(92,92,92,0);
 }
 .CV {
-    width: 50%;
+    width: 80%;
     height: auto;
     border: none;
     position: relative;
@@ -229,21 +240,83 @@ button {
     animation: paragraphs 2s forwards;
     padding: 5%;
 }
+h3, h2{
+    font-family: 'Monoton';
+}
+h2 {
+    margin: auto;
+    font-size: 3rem;
+    padding: 6%;
+}
+#interests {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
 #galerie {
-    border: black solid 1px;
-    width: 100%;
+    width: 100vw;
     height: 50%;
     display: flex;
-    flex-direction: row;
-    overflow: hidden;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
-#galerie img {
-    width: 25%;
+.galerieCard {
+    display: flex;
+}
+.astro {
+    background-image: url('../assets/earth.jpeg');
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+}
+.astro p {
+    width: 20%;
+}
+.bball {
+    display: flex;
+    background-color: white;
+    height: 60vh;
+}
+.bball img {
     object-fit: cover;
-    opacity: 0.5;
 }
-#galerie img:hover {
-    opacity: 1;
+.bballText {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+.bballText img {
+    height: 60%;
+}
+.books {
+    background-image: url("../assets/books.jpeg");
+    background-size: cover;
+    color: white;
+}
+.books p {
+    background-color: rgb(1,1,1, 0.6);
+}
+.portrait {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+}
+.portrait img{
+    margin: none;
+    height: 100%;
+    object-fit: contain;
+    width: 33%;
+}
+.portrait h3 {
+    position: absolute;
+    right: 10%;
+    color: black;
+    font-size: 3rem;
+}
+.portrait p {
+    font-size: 1.5rem;
 }
 #Title {
     font-family: 'Monoton';
@@ -267,167 +340,9 @@ li {
 li:hover {
     animation: letters 0.5s forwards;
 }
-
-/**************************
-********skills*************
-****************************/
-
-#Skills {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100vw;
-    height: 20vh;
-}
-#skillName {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100vw;
-    height: 10vh;
-}
-
-.skill {
-    width: 160px;
-    height: 160px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.myButton {
-	box-shadow: 0px 1px 0px 0px #1c1b18;
-	background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
-	background-color:#eae0c2;
-	border-radius:15px;
-	border:2px solid #333029;
-	display:inline-block;
-	cursor:pointer;
-	color:#505739;
-	font-family:Arial;
-	font-size:14px;
-	font-weight:bold;
-	padding:12px 16px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
-}
-.myButton:hover {
-	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
-	background-color:#ccc2a6;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
-.outer {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
-                -6px -6px 5px -1px rgba(255,255,255,0.7);
-}
-.inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
-                inset -4px -4px 6px -1px rgba(255,255,255,0.7),
-                -0.5px -0.5px 0px rgba(255,255,255,1),
-                0.5px 0.5px 0px rgba(0,0,0,0.15),
-                0px 12px 10px -10px rgba(0,0,0,0.05);
-                
-}
-#number {
-    font-weight: 500px;
-}
-circle {
-    fill: none;
-    stroke: url(#GradientColor);
-    stroke-width: 20px;
-    stroke-dasharray: 472;
-    stroke-dashoffset: 472; /*makes a part hidden*/
-    animation: skillAnim 2s linear forwards;
-}
-.circle1 circle {
-    animation: skillAnim 2s linear forwards;
-}
-.circle2 circle {
-    animation: skillAnim2 2s linear forwards;
-}
-.circle3 circle {
-    animation: skillAnim3 2s linear forwards;
-}
-svg {
-    position: absolute;
-}
-
-/************************************
-************* Animations ************
-*************************************/
-@keyframes skillAnim {
-    100% {
-        stroke-dashoffset: 95;
-    }
-}
-@keyframes skillAnim2 {
-    100% {
-        stroke-dashoffset: 165;
-    }
-}
-@keyframes skillAnim3 {
-    100% {
-        stroke-dashoffset: 71;
-    }
-}
-
-@keyframes paragraphs {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes pageDown {
-    from {
-        transform: translateY(-100vh);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-@keyframes letters {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-1vh);
-        color: rgb(31, 29, 29);
-    }
-}
-
 /************************************
 ************* RESPONSIVE*************
 *************************************/
-@media only screen and (max-width: 769px) {
-    #resume {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .CV{
-        width: 80vw;
-    }
-}
 @media only screen and (min-width: 769px) {
     #description {
     display: flex;
@@ -437,6 +352,59 @@ svg {
     align-items: center;
     font-weight: 500;
     border: 1%;
+    }
+}
+
+@media only screen and (min-width: 1224px) {
+    #resume {
+        width: 60vw;
+    }
+
+}
+@media only screen and (max-width: 769px) {
+    .astro p {
+        width: 50vw;
+    }
+    .bball {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 80vh;
+    }
+    .books {   
+        margin: auto;
+        padding: 10% 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .bballText {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .portrait {
+        flex-direction: column;
+        padding: 20% 0;
+        align-items: center;
+        height: auto;
+    }
+    .portraitTitle {
+        position: relative !important;
+        margin: auto;
+        padding-bottom: 10%;
+        font-size: 2rem;
+    }
+    .portrait p {
+        width: 80vw;
+        text-align: start;
+    }
+    .portrait img {
+        width: 50vw;
+    }
+    .portraitImg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 </style>

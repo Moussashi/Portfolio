@@ -4,8 +4,7 @@
         <h1>
           Moussa Sy
         </h1>
-        <p>front-end developer</p>
-        <p>for the love of animations</p>
+        <p>front-end developer and UX designer</p>
 
         <router-link to="/portfolio/home">
             <button class="myButton">Welcome</button>
@@ -81,7 +80,7 @@ export default {
 
                 const colors = []
                 for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
-                    colors.push(0, 0.10, 0.5)
+                    colors.push(0.9, 0.8, 0.5)
                 }
 
             planeMesh.geometry.setAttribute('color', new THREE.BufferAttribute(
@@ -185,32 +184,32 @@ export default {
                         const { color } = intersects[0].object.geometry.attributes
                         
                         //vertice 1
-                        color.setX(intersects[0].face.a, 0.1)  //vertices to change colors
-                        color.setY(intersects[0].face.a, 0.5)
-                        color.setZ(intersects[0].face.a, 1)
+                        color.setX(intersects[0].face.a, 0.9)  //vertices to change colors
+                        color.setY(intersects[0].face.a, 0.8)
+                        color.setZ(intersects[0].face.a, 0.5)
 
                         //vertice 2
-                        color.setX(intersects[0].face.b, 0.1)  //vertices to change colors
-                        color.setY(intersects[0].face.b, 0.5)
-                        color.setZ(intersects[0].face.a, 1)
+                        color.setX(intersects[0].face.b, 0.9)  //vertices to change colors
+                        color.setY(intersects[0].face.b, 0.8)
+                        color.setZ(intersects[0].face.a, 0.5)
 
                         //vertice 3
-                        color.setX(intersects[0].face.c, 0.1)  //vertices to change colors
-                        color.setY(intersects[0].face.c, 0.5)
-                        color.setZ(intersects[0].face.a, 1)
+                        color.setX(intersects[0].face.c, 0.9)  //vertices to change colors
+                        color.setY(intersects[0].face.c, 0.8)
+                        color.setZ(intersects[0].face.a, 0.5)
 
                         
 
                     intersects[0].object.geometry.attributes.color.needsUpdate = true
 
                     const initialColor = {
-                        r: 0,
-                        g: 0.10,
+                        r: 0.9,
+                        g: 0.8,
                         b: 0.5
                     }
                     const hoverColor = {
-                        r: 0.1,
-                        g: 0.5,
+                        r: 1,
+                        g: 1,
                         b: 1
                     }
                     gsap.to(hoverColor, {
@@ -276,13 +275,18 @@ html, body {
   margin: 0;
 }
 #title {
-  color: white;
+  color: #3a8a9e;
   position: absolute;
   top: 50%;
   left: 50%;
   width: 45vw;
   transform: translate(-50%, -50%);
   font-size: 2rem;
+  text-align: center;
+  background-color: white;
+  padding: 2%;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 .myButton {
 	box-shadow: 3px 4px 0px 0px #899599;

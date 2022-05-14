@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       name: " Hello, I'm Moussa Sy",
-      title: "Front-end Developper from France",
+      title: "Front-end Developper from Paris, France",
       triforceFull: false,
       leave: null
     }
@@ -94,6 +94,7 @@ export default {
 a {
   color: black;
   text-decoration: none;
+  font-size: 3rem;
 }
 p {
   font-size: 2vw;
@@ -152,3 +153,5 @@ p:hover {
   }
 }
 </style>
+
+//change rooter link to bigger font
