@@ -1,21 +1,38 @@
 <template>
   <div id="wrapper">
     <div id="presentation">
-        <h1 id="name"> {{ name }} </h1>
-        <h3 id="title"> {{ title }} </h3>
+
+      <div class="video-wrapper">
+        <video playsinline autoplay muted loop>
+          <source src="../assets/smokeW.mp4" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+        <div class="header">
+          <h3 id="title"> {{ title }} </h3>
+          <h1 id="name"> {{ name }} </h1>
+        </div>
+
+
+        <nav>
+          <div class="navigation">
+            <button v-if="!triforceFull" :class="leave" id="triforce" @click="toggleButton()">Navigate</button>
+            <button v-else id="triforceFull" @click="toggleButton()">Hide</button>
+            
+            <transition name="fade">
+            <div class="components" v-if="triforceFull">
+              <router-link to="/portfolio/work" :class="disapear"> <p>Work</p> </router-link>
+              <router-link to="/portfolio/resume"> <p>Resume</p> </router-link>
+              <router-link to="/portfolio/contact"> <p>Contact</p> </router-link>
+            </div>
+            </transition>
+
+          </div>
+        </nav>
+
+      </div>
+
     </div>
 
-    <nav>
-      <div class="navigation">
-        <img src="../assets/triforce.png" v-if="!triforceFull" :class="leave" id="triforce" @click="toggleButton()" alt="triforce image">
-        <img src="../assets/triforceFull.png" v-else id="triforceFull" @click="toggleButton()" alt="full triforce image">
-        <div class="components" v-if="triforceFull">
-          <router-link to="/portfolio/work"> <p>Work</p> </router-link>
-          <router-link to="/portfolio/resume"> <p>Resume</p> </router-link>
-          <router-link to="/portfolio/contact"> <p>Contact</p> </router-link>
-        </div>
-      </div>
-    </nav>
 
   </div>
 </template>
@@ -24,10 +41,11 @@
 export default {
   data() {
     return {
-      name: " Hello, I'm Moussa Sy",
-      title: "Front-end Developper from Paris, France",
+      name: "This is my portfolio",
+      title: "I'm Moussa Sy, Front-end developer, UX designer and... ",
       triforceFull: false,
-      leave: null
+      leave: null,
+      disapear: null
     }
   },
   methods: {
@@ -39,12 +57,21 @@ export default {
       } else {
         this.leave = null
       }
+
     }
   }
 }
 </script>
 
 <style scoped>
+@font-face {
+    font-family: 'Monoton';
+    src: url('../assets/Monoton-Regular.ttf');
+}
+@font-face {
+    font-family: 'Audrey';
+    src: url('../assets/Audrey-Normal.otf');
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -55,28 +82,60 @@ export default {
 }
 #wrapper {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
 }
 #name {
-  color: rgb(239, 228, 221);
+  color: black;
   font-size: 3em;
   text-align: center;
   margin-bottom: 0;
   animation: arrival 3s forwards;
+  font-family: Monoton;
 }
 #title {
-  color: rgb(239, 228, 221);
-  font-size: 1.5rem;
+  color: black;
+  font-size: 1.8rem;
   text-align: center;
   margin-top: 0;
   animation: arrival 4s forwards;
+}
+#presentation {
+  border: #2c3e50 solid 1px;
+  width: 100vw;
+  height: 30vh;
+}
+video {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.video-wrapper {
+  /* Telling our absolute positioned video to 
+  be relative to this element */
+  position: relative;
 
+  width: 100vw;
+  height: 100vh;
+
+  /* Will not allow the video to overflow the 
+  container */
+  overflow: hidden;
+
+  /* Centering the container's content vertically 
+  and horizontally */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+header {
+  position: relative;
 }
 .navigation {
-  width: 40vw;
+  width: 50vw;
   height: 40vh;
   margin: auto;
   display: flex;
@@ -87,9 +146,15 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  animation: arrivalY 0.7s forwards;
+  animation: arrivalY 1.2s forwards;
   padding: 1%;
   margin-top: 10%;
+}
+button {
+  z-index: 2;
+  padding: 3%;
+  font-family: Audrey;
+  font-size: 1.5rem;
 }
 a {
   color: black;
@@ -98,20 +163,26 @@ a {
 }
 p {
   font-size: 2vw;
+  color: black;
 }
 p:hover {
   animation: underline 1s forwards;
+  color: black;
 }
 #triforce {
-  width: 10vw;
+  width: 25vw;
   margin: 0 auto;
-  animation: arrival 1s forwards;
-
+  text-align: center;
 }
 #triforceFull {
   width: 20vw;
   margin: 0 auto;
-  animation: arrival 1s ease-in-out;
+}
+.fade-enter-active, .fade-leave-active {
+  animation: arrivalY 2s forwards;
+}
+.fade-enter, .fade-leave-to {
+  animation: leaveY 2s forwards;
 }
 
 @keyframes arrival {

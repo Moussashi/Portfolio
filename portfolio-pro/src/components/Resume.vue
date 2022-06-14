@@ -317,6 +317,8 @@ h2 {
 }
 .portrait p {
     font-size: 1.5rem;
+    text-align: center;
+    padding: 0% 5%;
 }
 #Title {
     font-family: 'Monoton';
@@ -340,6 +342,7 @@ li {
 li:hover {
     animation: letters 0.5s forwards;
 }
+
 /************************************
 ************* RESPONSIVE*************
 *************************************/

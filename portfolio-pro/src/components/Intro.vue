@@ -2,12 +2,11 @@
     <div id="appCanvas">
       <div id="title">
         <h1>
-          Moussa Sy
+          Welcome
         </h1>
-        <p>front-end developer and UX designer</p>
 
         <router-link to="/portfolio/home">
-            <button class="myButton">Welcome</button>
+            <button class="myButton">Enter</button>
         </router-link>
       </div>
     </div>
@@ -80,7 +79,7 @@ export default {
 
                 const colors = []
                 for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
-                    colors.push(0.9, 0.8, 0.5)
+                    colors.push(1, 1, 1)
                 }
 
             planeMesh.geometry.setAttribute('color', new THREE.BufferAttribute(
@@ -184,33 +183,33 @@ export default {
                         const { color } = intersects[0].object.geometry.attributes
                         
                         //vertice 1
-                        color.setX(intersects[0].face.a, 0.9)  //vertices to change colors
-                        color.setY(intersects[0].face.a, 0.8)
-                        color.setZ(intersects[0].face.a, 0.5)
+                        color.setX(intersects[0].face.a, 0.0)  //vertices to change colors
+                        color.setY(intersects[0].face.a, 1)
+                        color.setZ(intersects[0].face.a, 0.0)
 
                         //vertice 2
-                        color.setX(intersects[0].face.b, 0.9)  //vertices to change colors
-                        color.setY(intersects[0].face.b, 0.8)
-                        color.setZ(intersects[0].face.a, 0.5)
+                        color.setX(intersects[0].face.b, 0.0)  //vertices to change colors
+                        color.setY(intersects[0].face.b, 1)
+                        color.setZ(intersects[0].face.b, 0.0)
 
                         //vertice 3
-                        color.setX(intersects[0].face.c, 0.9)  //vertices to change colors
-                        color.setY(intersects[0].face.c, 0.8)
-                        color.setZ(intersects[0].face.a, 0.5)
+                        color.setX(intersects[0].face.c, 0.0)  //vertices to change colors
+                        color.setY(intersects[0].face.c, 1)
+                        color.setZ(intersects[0].face.c, 0.0)
 
                         
 
                     intersects[0].object.geometry.attributes.color.needsUpdate = true
 
                     const initialColor = {
-                        r: 0.9,
-                        g: 0.8,
-                        b: 0.5
-                    }
-                    const hoverColor = {
                         r: 1,
                         g: 1,
                         b: 1
+                    }
+                    const hoverColor = {
+                        r: 0.1,
+                        g: 0.1,
+                        b: 0.1
                     }
                     gsap.to(hoverColor, {
                         r: initialColor.r,
@@ -224,12 +223,12 @@ export default {
                             //vertice 2
                             color.setX(intersects[0].face.b, hoverColor.r)  //vertices to change colors
                             color.setY(intersects[0].face.b, hoverColor.g)
-                            color.setZ(intersects[0].face.a, hoverColor.b)
+                            color.setZ(intersects[0].face.b, hoverColor.b)
                     
                             //vertice 3
                             color.setX(intersects[0].face.c, hoverColor.r)  //vertices to change colors
                             color.setY(intersects[0].face.c, hoverColor.g)
-                            color.setZ(intersects[0].face.a, hoverColor.b)
+                            color.setZ(intersects[0].face.c, hoverColor.b)
                             color.needsUpdate = true
                         }
                     })
@@ -262,12 +261,21 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+    font-family: 'Audrey';
+    src: url('../assets/Audrey-Normal.otf');
+}
+@font-face {
+    font-family: 'Monoton';
+    src: url('../assets/Monoton-Regular.ttf');
+}
+
 html, body {
   padding: 0;
   margin: 0;
 }
 #appCanvas {
-  font-family: Georgia, 'Times New Roman', Times, serif, Helvetica, Arial, sans-serif;
+  font-family: Monoton, 'Times New Roman', Times, serif, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -275,18 +283,13 @@ html, body {
   margin: 0;
 }
 #title {
-  color: #3a8a9e;
+  color: rgb(19, 19, 19);
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 45vw;
   transform: translate(-50%, -50%);
   font-size: 2rem;
   text-align: center;
-  background-color: white;
-  padding: 2%;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 .myButton {
 	box-shadow: 3px 4px 0px 0px #899599;
@@ -297,9 +300,9 @@ html, body {
 	display:inline-block;
 	cursor:pointer;
 	color:#3a8a9e;
-	font-family:Arial;
-	font-size:17px;
-	padding:7px 25px;
+	font-family: Audrey;
+	font-size:1.3rem;
+	padding:3% 15%;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #e1e2ed;
 }
@@ -311,6 +314,9 @@ html, body {
 	position:relative;
 	top:1px;
 }
-
+h1 {
+    font-size: 5rem;
+    color: #3a8a9e;
+}
 
 </style>

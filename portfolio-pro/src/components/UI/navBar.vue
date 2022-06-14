@@ -93,6 +93,7 @@ a:visited {
 }
 a:hover {
     background-color: white;
+    padding: 1%;
 }
 .icon {
     background-color: white;

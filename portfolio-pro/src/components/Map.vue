@@ -36,12 +36,12 @@ export default {
     data() {
         return {
             url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-            center: [-21.212092066743985, 55.30713545084482],
-            zoom: 14,
+            center: [48.8112109986514, 2.2977432786115464],
+            zoom: 12,
             markers: [
                 {
                     id: 1,
-                    coodrs: [-21.22245743980369, 55.303528173890086]
+                    coodrs: [-21.22245743980369, 55.303528173890086] // Not real marker
                 }
             ]
 

@@ -21,82 +21,49 @@
 
         </section>
 
-        <!-- Projects -->
-        
-        <!-- Vi motiv -->
-        <div class="content">
-            <img src="../../public/Vi-Motiv.png" alt="Logo Vi-Motiv">
-            <p class="projectDescription" >Vi Motiv is a personnal project about productivity and coding. Using Api calls, form submission and authentification to showcase what I learned during my Openclassroom course as a fullstack developper.</p>
-
-            <div class="captures">
-                <img src="../assets/vi-motiv-website1.png" alt="Vi-motiv screenshots">
-                <img src="../assets/vi-motiv-website3.png" alt="Vi-motiv screenshots">
-                <img src="../assets/vi-motiv-website2.png" alt="Vi-motiv screenshots">
-                <img src="../assets/vi-motiv-website4.png" alt="Vi-motiv screenshots">
-
-            </div>
-            <video controls >
-                <source src="../assets/ViMotiv.mp4"
-                        type="video/mp4">
-
-                Sorry, your browser doesn't support embedded videos.
-            </video>
-
-            <h2>tech</h2>
-            <div class="logo">
-                <img src="../assets/vuejs.png" alt="Vue.js logo">
-                <img src="../assets/javascript.png" alt="javascript logo">
-                <img src="../assets/nodejs.png" alt="node.js logo">
-                <img src="../assets/express.png" alt="express.js logo">
-                <img src="../assets/mysql.png" alt="mysql logo">
-            </div>
-        </div>
-
-        <!-- Portraits -->
-        <div class="content">
-            <h2>Portrait Photography</h2>
-            <p>by me</p>
-            <p class="projectDescription">Simple website with photos I shot as a photographer. Displayed horizontaly.</p>
-            <div class="captures">
-                <img src="../assets/portraitwebsite1.png" alt="screenshot of my portrait photography website">
-                <img src="../assets/portraitwebsite2.png" alt="screenshot of my portrait photography website">
+        <!-- How i work -->
+        <h1 v-if="!french">My Projects</h1>
+        <h1 v-else>Mes Projets</h1>
+        <section>
+            <div class="projects">
+                <div class="prjTxt">
+                    <h2>Groupomania</h2>
+                    <h4>Projet final du parcours Développeur Web Fullstack de OpenClassrooms, Création d'un réseau social d'entreprise avec authentification, forum permettant de poster des images/gif et textes et de se créer un compte</h4>
+                    <button class="btn1">Voir ce projet</button>
+                </div>
+                <div class="prjImg">
+                    <img src="../assets/groupo.png" alt="">
+                </div>
             </div>
 
-            <video controls >
-                <source src="../assets/PortraitVideo.mp4"
-                        type="video/mp4">
+            <div class="separator"><fa class="icon" icon="cloud"/></div>
 
-                Sorry, your browser doesn't support embedded videos.
-            </video>
-
-            <h2>tech</h2>
-            <div class="logo">
-                <img src="../assets/vuejs.png" alt="Vue.js logo">
-                <img src="../assets/javascript.png" alt="javascript logo">
+            <div class="projects">
+                <div class="prjImg">
+                    <img src="../assets/howard.jpeg" alt="">
+                </div>
+                <div class="prjTxt">
+                    <h2>AstroBiblio</h2>
+                    <h4>Projet personnel de création d'un dictionnaire illustré de l'Univers</h4>
+                    <button class="btn2">voir ce projet</button>
+                </div>
             </div>
-        </div>
 
-        <div class="content">
-            <h2>Groupomania</h2>
-            <p>Final project Openclassroom</p>
-            <p class="projectDescription">Final project of the Fullstack web developer course with openclassroom. Had to make a social media app for a company. Posting texts and images, creation of a profile with authentification</p>
+            <div class="separator"><fa class="icon" icon="cloud"/></div>
+
+            <div class="projects">
+                <div class="prjTxt">
+                    <h2>MyFitPage</h2>
+                    <h4>Projet en construction</h4>
+                    <button class="btn3">-- <fa class="icon" icon="hammer"/>--</button>
+                </div>
+                <div class="prjImg">
+                    <img src="../assets/comingSoon.png" alt="">
+                </div>
+            </div>
             
-            <video controls >
-                <source src="../assets/Groupomania.mp4"
-                        type="video/mp4">
-
-                Sorry, your browser doesn't support embedded videos.
-            </video>
-
-            <h2>tech</h2>
-            <div class="logo">
-                <img src="../assets/vuejs.png" alt="Vue.js logo">
-                <img src="../assets/javascript.png" alt="javascript logo">
-                <img src="../assets/nodejs.png" alt="node.js logo">
-                <img src="../assets/express.png" alt="express.js logo">
-                <img src="../assets/mysql.png" alt="mysql logo">
-            </div>
-        </div>
+        </section>
+        
     </div>
 </template>
 
@@ -128,6 +95,10 @@ export default {
     font-family: 'Monoton';
     src: url('../assets/Monoton-Regular.ttf');
 }
+@font-face {
+    font-family: 'Audrey';
+    src: url('../assets/Audrey-Normal.otf');
+}
 #wrapper {
     width: 100vw;
     animation: pageUp 1.5s forwards;
@@ -145,40 +116,9 @@ export default {
     font-size: 4vw;
     padding: 0;
 }
-.content {
-    width: 70vw;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
+h1 {
     text-align: center;
-    padding: 5%;
-    border: 2px black solid;
-}
-.captures {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.captures img {
-    width: 70%;
-    margin-top: 1%;
-}
-.projectDescription {
-    width: 80%;
-    margin: 0 auto;
-    padding: 5%;
-}
-.logo {
-    display: flex;
-    flex-direction: row;
-}
-.logo img {
-    width: 15%;
-}
-img {
-    width: 30vw;
-    margin: 0 auto;
+    margin-bottom: 20%;
 }
 ul {
     display: flex;
@@ -194,6 +134,121 @@ li {
 .letters:hover {
     animation: letters 0.5s ease-in-out
 }
+.projects {
+    font-family: Audrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+img {
+    width: 80%;
+}
+.prjTxt, .prjImg {
+    width: 50%;
+    margin-bottom: 20%;
+}
+.btn1 {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  outline: 0;
+  padding: 3% 6%;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.btn1:hover,
+.btn1:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.btn1:active {
+  opacity: .5;
+}
+.btn2 {
+  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  padding: 3% 6%;
+  cursor: pointer;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  height: 2%;
+}
+
+.btn2:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: .1s;
+}
+.btn3 {
+  background-image: linear-gradient(92.88deg, #575758 9.16%, #2a2a2a 43.89%, #1b191e 64.72%);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  padding: 3% 6%;
+  cursor: pointer;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  height: 2%;
+}
+.btn3:hover {
+  box-shadow: rgba(4, 3, 9, 0.5) 0 1px 30px;
+  transition-duration: .1s;
+}
+.icon {
+    font-size: 1.5rem;
+}
+.separator {
+  font-family: "Share Tech Mono", monospace;
+  color: #fff;
+  font-size: 6vh;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .45);
+  margin-bottom: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.separator::before,
+  .separator::after {
+    content: '';
+    display: block;
+    height: 0.09em;
+    min-width: 30vw;
+  }
+  
+  .separator::before {
+    background: linear-gradient(to right, rgba(240,240,240,0), #fff);
+    margin-right: 4vh;
+  }
+  
+  .separator::after {
+    background: linear-gradient(to left, rgba(240,240,240,0), #fff);
+    margin-left: 4vh;
+  } 
 
 /*********************************************
 ****************ANIMATIONS********************

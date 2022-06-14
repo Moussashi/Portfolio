@@ -1,7 +1,15 @@
 <template>
 <div id="wrapper">
     <div id="Title">
-        <h1>CONTACT</h1>
+        <ul>
+            <li 
+                v-for="tl in title" 
+                :key="tl"
+                class="letters"
+                >
+                <h1> {{ tl }} </h1>
+            </li>
+        </ul>  
         <nav-bar 
                 id="nav"
                 :home="navbar.home"
@@ -39,6 +47,7 @@ export default {
     components: { CustomMap, navBar },
     data() {
         return {
+            title: ['C', 'O', 'N', 'T', 'A', 'C', 'T'],
             navbar: {
                 home: 'Home',
                 work: 'Work',
@@ -125,6 +134,16 @@ img:hover {
 #map {
     width: 60%;
 }
+ul {
+    display: flex;
+    font-size: 2rem;
+}
+.letters {
+    list-style: none;
+}
+.letters:hover {
+    animation: letters 0.5s ease-in-out
+}
 @keyframes buttonHov {
     100% {
         width: 100%;
@@ -148,6 +167,15 @@ img:hover {
     }
     to {
         width: 40%;
+    }
+}
+@keyframes letters {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-1vh);
+        color: rgb(31, 29, 29);
     }
 }
 /*********************************
