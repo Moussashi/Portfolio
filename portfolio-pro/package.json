@@ -2,7 +2,7 @@
   "name": "portfolio-pro",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://moussasydev.com/",
+  "homepage": "https://moussasydev.com",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

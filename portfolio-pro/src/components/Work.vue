@@ -180,7 +180,7 @@ img {
 }
 .btn2 {
   background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
-  border-radius: 8px;
+  border-radius: 9px;
   border-style: none;
   box-sizing: border-box;
   color: #FFFFFF;
