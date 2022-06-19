@@ -1,5 +1,8 @@
 <template>
     
+    <div id="languageBtn">
+        <button @click="toggleLang"> {{ language }} </button>
+    </div>
     <div class="wrapper">
         <section id="Title">
             <ul>
@@ -26,7 +29,7 @@
         <div id="resume">
             <img class="CV" src="../../public/CV-SY.png" alt="CV developpeur front-end Moussa Sy">
             <section id="description"> 
-                <div v-if="!english">
+                <div v-if="!english" class="changeLanguage">
                     <p>Développeur Front-end de Paris. En tant qu'ancien photographe professionnel, 
                         créer du contenu attractif est une passion et trouver des moyens d’être plus 
                         productif chaque jours est une mission. Après une formation réussie avec OpenClassrooms
@@ -37,7 +40,7 @@
                 </div>
 
                 <div v-else>
-                    <p>Front-end developer from Paris. As a former professionnal photographer,
+                    <p class="changeLanguage">Front-end developer from Paris. As a former professionnal photographer,
                         creating attractive content is a passion and finding ways to be more 
                         productive everyday is a mission. After a sucessful full course with 
                         OpenClassrooms as a web developer I'm carrying on learning with UI/UX 
@@ -45,8 +48,6 @@
                          new frameworks or programming languages. Do not hesitate to reach me, 
                          I am available for a remote job or on site (Paris or Toulouse).</p>
                 </div>
-                
-                <button @click="toggleLang"> {{ language }} </button>
 
             </section>
 
@@ -55,26 +56,41 @@
                     <div id="galerie">
                         <div class="galerieCard astro">
                             <h3>Astronomie <fa class="icon" icon="meteor"/></h3>
-                            <p>Passion pour l'astronomie, suivi de l'actualité dans ce domaine 
+                            <p v-if="!english" class="changeLanguage">Passion pour l'astronomie, suivi de l'actualité dans ce domaine 
                                 ainsi que pratique de l'astrophotographie au reflex. 
                                 Un amour de la photo de paysages qui s'est étendu au-delà de l'exosphère</p>
+                            
+                            <p v-else class="changeLanguage">
+                                Passion for astronomy, follow news and videos on the subject and beggin 
+                                astrophotography. A love for landscapes photos that went beyond the exosphere
+                            </p>
                         </div>
                         
                         <div class="galerieCard bball">
                             
                             <div class="bballText books">
                                 <h3>Lecture  <fa class="icon" icon="book-open"/></h3>
-                                <p>Amoureux de livres policiers et fantastiques, Dan Brown
+                                <p v-if="!english" class="changeLanguage">Amoureux de livres policiers et fantastiques, Dan Brown
                                     , Bernard Werber, Stephen King et tout particulièrement
                                      J.K Rowling et la série Harry Potter <fa class="icon" icon="bolt"/></p>
+
+                                <p v-else class="changeLanguage">
+                                    Love fantasy and detective novels, Dan Brown, Bernard Werber,
+                                     Stephen King and especialy J.K Rowling with the harry potter 
+                                     series <fa class="icon" icon="bolt"/>
+                                </p>
                                 
                             </div>
 
                             <div class="bballText">
                                 <h3>Basket-Ball <fa class="icon" icon="basketball"/></h3>
-                                <p>Pratique active du basketball en compétition et pour le plaisir depuis 2003,
+                                <p v-if="!english" class="changeLanguage">Pratique active du basketball en compétition et pour le plaisir depuis 2003,
                                     suivi régulier de l'actualité basket et du sport en général (football, boxe, arts martiaux).
                                      Pratique d'art martiaux en club: boxe anglaise, Vo Vietnam, Hapkido, jiu jitsu brésilien
+                                </p>
+                                <p v-else class="changeLanguage">
+                                    Played basketball in competition and as a hobby since 2003, follow sports actuality daily 
+                                    (soccer, boxing, martial arts...). Martial artist (Boxing, Vo-Vietnam, Hapkido, brazilian Jiu jitsu)
                                 </p>
                                 <img src="../assets/bballMe.jpeg" alt="Photographie de moi même en activitéz">
                             </div>
@@ -137,12 +153,12 @@
 import navBar from './UI/navBar.vue'
 export default {
     components: {
-        navBar
+        navBar,
     },
     data() {
         return {
             english: true,
-            language: 'Passer au Français ?',
+            language: 'Fr',
             title: ['R', 'E', 'S', 'U', 'M', 'E'],
             navbar: {
                 home: 'Home',
@@ -157,9 +173,9 @@ export default {
             this.english = !this.english
 
             if (this.english) {
-                this.language = 'Passer au Français ?'
+                this.language = 'En'
             } else {
-                this.language = 'Switch to English'
+                this.language = 'Fr'
             }
         },
         carousel() {
@@ -317,8 +333,20 @@ h2 {
     background-color: rgb(1,1,1, 0.6);
 }
 .portraitTtl {
+    position: relative;
     margin: auto;
-    padding: 20% 0 10% 0;
+    padding-top: 20vh;
+}
+#languageBtn button {
+background-color: white;
+border-radius: 50%;
+padding: 1%;
+position: fixed;
+top: 1%;
+right: 1%;
+}
+.changeLanguage {
+    animation: changeLanguage 1s forwards;
 }
 
 /*********************************************
@@ -407,6 +435,21 @@ li {
 }
 li:hover {
     animation: letters 0.5s forwards;
+}
+
+/************************************
+************* ANIMATIONS ************
+*************************************/
+
+@keyframes changeLanguage {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
 
 /************************************
