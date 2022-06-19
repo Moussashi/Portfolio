@@ -73,10 +73,19 @@ export default {
 </script>
 
 <style scoped>
+/*********************************************
+*********************FONTS********************
+**********************************************/
+
+
 @font-face {
     font-family: 'Monoton';
     src: url('../assets/Monoton-Regular.ttf');
 }
+
+/*********************************************
+*******************GENERAL********************
+**********************************************/
 #wrapper {
     width: 100vw;
     height: 100vh;
@@ -85,6 +94,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    animation: pageDown 2s forwards;
 }
 #Title {
     display: flex;
@@ -104,6 +114,7 @@ form {
     display: flex;
     flex-direction: column;
     width: 50%;
+    padding: 1%;
 }
 button {
     background-color: rgb(239, 228, 221);
@@ -137,12 +148,25 @@ img:hover {
 ul {
     display: flex;
     font-size: 2rem;
+    padding: 0;
 }
 .letters {
     list-style: none;
 }
 .letters:hover {
     animation: letters 0.5s ease-in-out
+}
+
+/*********************************************
+****************ANIMATIONS********************
+**********************************************/
+@keyframes pageDown {
+    from {
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 @keyframes buttonHov {
     100% {
@@ -203,6 +227,10 @@ ul {
     }
     #nav {
         font-size: 1.5rem;
+    }
+    h1 {
+        font-size: 3rem;
+        margin: auto;
     }
 }
 </style>

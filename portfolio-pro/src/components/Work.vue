@@ -91,6 +91,9 @@ export default {
 
 
 <style scoped>
+/*********************************************
+*********************FONTS********************
+**********************************************/
 @font-face {
     font-family: 'Monoton';
     src: url('../assets/Monoton-Regular.ttf');
@@ -99,6 +102,11 @@ export default {
     font-family: 'Audrey';
     src: url('../assets/Audrey-Normal.otf');
 }
+
+/*********************************************
+****************GENERAL********************
+**********************************************/
+
 #wrapper {
     width: 100vw;
     animation: pageUp 1.5s forwards;

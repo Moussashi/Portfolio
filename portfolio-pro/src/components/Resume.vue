@@ -24,7 +24,7 @@
 
 
         <div id="resume">
-            <img class="CV" src="../../public/CV-frontend-SY.png" alt="CV developpeur front-end Moussa Sy">
+            <img class="CV" src="../../public/CV-SY.png" alt="CV developpeur front-end Moussa Sy">
             <section id="description"> 
                 <div v-if="!english">
                     <p>Développeur Front-end de Paris. En tant qu'ancien photographe professionnel, 
@@ -33,8 +33,6 @@
                         en tant que Développeur Web je continue de me former en UI/UX design et animations dans 
                         le but d'atteindre un niveau Awwwards. Je suis ouvert à l'apprentissage de nouveaux frameworks
                         ou languages. N'hésitez pas à me contacter, je suis disponible en remote ou sur site (Paris ou Toulouse).
-
-
                     </p>
                 </div>
 
@@ -82,23 +80,55 @@
                             </div>
                             
                         </div>
-                        
-                        <div class="portrait">
-                            <div class="portraitImg">
-                                <h3 class="portraitTitle">Portraits <fa class="icon" icon="camera-retro"/></h3>
-                                <img src="../assets/portrait.png" alt="photo de portrait">
-                                <img src="../assets/img5.png" alt="photo de portrait">
-                                <img src="../assets/img12.png" alt="photo de portrait">
-                            </div>
-                            <p>Ancien photographe professionnel, spécialisé dans le portrait et mariages. 
-                                Organisation d'une exposition dans le 15eme arrondissement de paris, 
-                                prochaine exposition en 2023... </p>
-
-                        </div>
                     </div>
                 </section>
+                
 
         </div>
+        
+    </div>
+    
+    <h2 class="portraitTtl">Portrait Photography</h2>
+
+    <div aria-label="portrait photos" class="carousel" data-carousel>
+        <button class="carousel-button prev" data-carousel-button="prev" >&#8666;</button>
+        <button class="carousel-button next" data-carousel-button="next"  >&#8667;</button>
+        <ul data-slides>
+            <li class="slide" data-active>
+                <img src="../assets/Kajal.jpg" alt="">
+            </li>
+            <li class="slide">
+                <img src="../assets/img10.png" alt="">
+            </li>
+            <li class="slide">
+                <img src="../assets/img2.png" alt="">
+            </li>
+            <li class="slide">
+                <img src="../assets/img6.png" alt="">
+            </li>
+            <li class="slide">
+                <img src="../assets/img11.png" alt="">
+            </li>
+            <li class="slide">
+                <img src="../assets/img1.png" alt="">
+            </li>
+            <li class="slide">
+                <img src="../assets/img35.png" alt="">
+            </li>
+            <li class="slide">
+                <img src="../assets/img36.png" alt="">
+            </li>
+            <li class="slide">
+                <img src="../assets/img17.png" alt="">
+            </li>
+            <li class="slide">
+                <img src="../assets/img38.png" alt="">
+            </li>
+            <li class="slide">
+                <img src="../assets/img39.png" alt="">
+            </li>
+        </ul>
+        
     </div>
 
 </template>
@@ -120,12 +150,6 @@ export default {
                 resume: 'Resume',
                 contact: 'Contact',
             },
-            number: {
-                    frontend: null,
-                    backend: null,
-                    vue: null,
-            },
-            showSkills: false
         }
     },
     methods: {
@@ -138,57 +162,51 @@ export default {
                 this.language = 'Switch to English'
             }
         },
-        displayNumber() {
-            let counterFront = 0;
-            let counterBack = 0;
-            let counterVue = 0;
+        carousel() {
+            const buttons = document.querySelectorAll("[data-carousel-button")
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    
+                    const offset = button.dataset.carouselButton === "next" ? 1 : -1
+                    const slides = button
+                        .closest("[data-carousel]")
+                        .querySelector("[data-slides]")
+                    
+                    const activeSlide = slides.querySelector("[data-active]")
+                    let newIndex = [...slides.children].indexOf(activeSlide) + offset
 
-            //Frontend
-            setInterval(() => {
-                if (counterFront == 80) {
-                    clearInterval()
-                } else {
-                    counterFront++
-                    this.number.frontend = counterFront + '%'
-                }
-            }, 25)
+                    if (newIndex < 0) newIndex = slides.children.length - 1
+                    if (newIndex >= slides.children.length) newIndex = 0
 
-            //Backend
-            setInterval(() => {
-                if (counterBack == 65) {
-                    clearInterval()
-                } else {
-                    counterBack++
-                    this.number.backend = counterBack + '%'
-                }
-            }, 30)
+                    slides.children[newIndex].dataset.active = true
+                    delete activeSlide.dataset.active
 
-            //vue.js
-            setInterval(() => {
-                if (counterVue == 85) {
-                    clearInterval()
-                } else {
-                    counterVue++
-                    this.number.vue = counterVue + '%'
-                }
-            }, 23)
-        },
-        toggleSkills() {
-            this.showSkills = !this.showSkills
+                    
+                })
+            })
         }
     },
     mounted() {
-       this.displayNumber()
-    }
+        this.carousel()
+    }    
 }
 </script>
 
 
 <style scoped>
+/*********************************************
+*********************FONTS********************
+**********************************************/
 @font-face {
     font-family: 'Monoton';
     src: url('../assets/Monoton-Regular.ttf');
 }
+
+/*********************************************
+****************GENERAL********************
+**********************************************/
+
+
 .wrapper {
     top: 0;
     left: 0;
@@ -221,11 +239,12 @@ export default {
     border: none;
     position: relative;
 }
-button {
+#description > button {
     width: 50%;
     padding: 1%;
     background-color: rgb(245, 232, 224);
-    border: none
+    border: none;
+    z-index: 2;
 }
 #description {
     display: flex;
@@ -297,29 +316,76 @@ h2 {
 .books p {
     background-color: rgb(1,1,1, 0.6);
 }
-.portrait {
-    display: flex;
-    flex-direction: column;
-    height: auto;
+.portraitTtl {
+    margin: auto;
+    padding: 20% 0 10% 0;
+}
+
+/*********************************************
+****************CAROUSEL ********************
+**********************************************/
+
+.carousel {
     width: 100vw;
+    height: 80vh;
+    position: relative
 }
-.portrait img{
-    margin: none;
-    height: 100%;
-    object-fit: contain;
-    width: 33%;
+.carousel > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
-.portrait h3 {
+.carousel > li {
+    width: 100vw;
+    overflow: hidden;
+}
+.slide {
     position: absolute;
-    right: 10%;
-    color: black;
-    font-size: 3rem;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
 }
-.portrait p {
-    font-size: 1.5rem;
-    text-align: center;
-    padding: 0% 5%;
+.slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
 }
+.slide > img {
+    display: block;
+    margin: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    max-width: 100%;
+}
+.carousel-button {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 5rem;
+    z-index: 99;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(245, 232, 224);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, .1);
+}
+.carousel-button:hover, 
+.carousel-button:focus {
+    color: #80C7FF;
+    background-color: rgba(0, 0, 0, .2);
+}
+.carousel-button.prev {
+    left: 1rem;
+}
+.carousel-button.next {
+    right: 1rem;
+}
+
+
 #Title {
     font-family: 'Monoton';
     display: flex;
@@ -346,6 +412,7 @@ li:hover {
 /************************************
 ************* RESPONSIVE*************
 *************************************/
+
 @media only screen and (min-width: 769px) {
     #description {
     display: flex;
@@ -408,6 +475,20 @@ li:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/***************************** */
+
+@media only screen and (max-width: 720px) {
+    .slide > img {
+        display: block;
+        width: auto;
+        margin: auto;
+        object-fit: scale-down;
     }
 }
 </style>

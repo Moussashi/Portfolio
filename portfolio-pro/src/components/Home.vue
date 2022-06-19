@@ -2,9 +2,12 @@
   <div id="wrapper">
     <div id="presentation">
 
+      <!--VIDEO BACKGROUND-->
+
       <div class="video-wrapper">
         <video playsinline autoplay muted loop>
-          <source src="../assets/smokeW.mp4" type="video/webm">
+          <source src="../assets/smokeW.mp4" type="video/mp4" poster="..assets/fallback.png">
+          <source src="../assets/smokeW.webm" type="video/webm" poster="..assets/fallback.png">
           Your browser does not support the video tag.
         </video>
         <div class="header">
@@ -15,11 +18,11 @@
 
         <nav>
           <div class="navigation">
-            <button v-if="!triforceFull" :class="leave" id="triforce" @click="toggleButton()">Navigate</button>
-            <button v-else id="triforceFull" @click="toggleButton()">Hide</button>
+            <button v-if="!navDeployed" :class="leave" id="triforce" @click="toggleButton()">Navigate</button>
+            <button v-else id="navDeployed" @click="toggleButton()">Hide</button>
             
             <transition name="fade">
-            <div class="components" v-if="triforceFull">
+            <div class="components" v-if="navDeployed">
               <router-link to="/portfolio/work" :class="disapear"> <p>Work</p> </router-link>
               <router-link to="/portfolio/resume"> <p>Resume</p> </router-link>
               <router-link to="/portfolio/contact"> <p>Contact</p> </router-link>
@@ -41,18 +44,18 @@
 export default {
   data() {
     return {
-      name: "This is my portfolio",
-      title: "I'm Moussa Sy, Front-end developer, UX designer and... ",
-      triforceFull: false,
+      name: "Welcome to my portfolio",
+      title: "Hello I'm Moussa Sy, Front-end developer",
+      navDeployed: false,
       leave: null,
       disapear: null
     }
   },
   methods: {
     toggleButton() {
-      this.triforceFull = !this.triforceFull
+      this.navDeployed = !this.navDeployed
 
-      if (!this.triforceFull) {
+      if (!this.navDeployed) {
         this.leave = 'leave'
       } else {
         this.leave = null
@@ -64,6 +67,9 @@ export default {
 </script>
 
 <style scoped>
+/********************************************
+******************** FONTS ******************
+*********************************************/
 @font-face {
     font-family: 'Monoton';
     src: url('../assets/Monoton-Regular.ttf');
@@ -72,6 +78,9 @@ export default {
     font-family: 'Audrey';
     src: url('../assets/Audrey-Normal.otf');
 }
+/********************************************
+******************** GENERAL ******************
+*********************************************/
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -103,6 +112,57 @@ export default {
   width: 100vw;
   height: 30vh;
 }
+header {
+  position: relative;
+}
+.navigation {
+  width: 50vw;
+  height: 40vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.components {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  animation: arrivalY 1.2s forwards;
+  padding: 1%;
+  margin-top: 10%;
+  width: auto;
+}
+button {
+  z-index: 2;
+  padding: 3%;
+  font-family: Audrey;
+  font-size: 1.5rem;
+}
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 3rem;
+}
+p {
+  font-size: 45%;
+  color: black;
+}
+p:hover {
+  animation: underline 1s forwards;
+  color: black;
+}
+#triforce {
+  width: 25vw;
+  margin: 0 auto;
+  text-align: center;
+}
+#navDeployed {
+  width: 20vw;
+  margin: 0 auto;
+}
+/********************************************
+******************** VIDEO ******************
+*********************************************/
 video {
   object-fit: cover;
   height: 100%;
@@ -131,53 +191,12 @@ video {
   align-items: center;
   justify-content: space-around;
 }
-header {
-  position: relative;
-}
-.navigation {
-  width: 50vw;
-  height: 40vh;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-.components {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  animation: arrivalY 1.2s forwards;
-  padding: 1%;
-  margin-top: 10%;
-}
-button {
-  z-index: 2;
-  padding: 3%;
-  font-family: Audrey;
-  font-size: 1.5rem;
-}
-a {
-  color: black;
-  text-decoration: none;
-  font-size: 3rem;
-}
-p {
-  font-size: 2vw;
-  color: black;
-}
-p:hover {
-  animation: underline 1s forwards;
-  color: black;
-}
-#triforce {
-  width: 25vw;
-  margin: 0 auto;
-  text-align: center;
-}
-#triforceFull {
-  width: 20vw;
-  margin: 0 auto;
-}
+
+/********************************************
+*************** ANIMATIONS ******************
+*********************************************/
+
+
 .fade-enter-active, .fade-leave-active {
   animation: arrivalY 2s forwards;
 }
@@ -223,6 +242,17 @@ p:hover {
     padding: 10%;
   }
 }
-</style>
 
-//change rooter link to bigger font
+/********************************************
+*************** RESPONSIVE ******************
+*********************************************/
+
+@media only screen and (max-width: 450px) {
+  button {
+    font-size: 1rem;
+  }
+  .components {
+    flex-direction: column;
+  }
+}
+</style>
