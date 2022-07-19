@@ -45,7 +45,7 @@ export default {
   data() {
     return {
       name: "Welcome to my portfolio",
-      title: "Hello I'm Moussa Sy, Front-end developer",
+      title: "I'm Moussa Sy, Web developper/Data Analyst",
       navDeployed: false,
       leave: null,
       disapear: null
