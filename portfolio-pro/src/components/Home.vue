@@ -13,6 +13,7 @@
         <div class="header">
           <h3 id="title"> {{ title }} </h3>
           <h1 id="name"> {{ name }} </h1>
+          <h4 id="title2"> {{ title2 }} </h4>
         </div>
 
 
@@ -44,8 +45,9 @@
 export default {
   data() {
     return {
-      name: "Welcome to my portfolio",
-      title: "I'm Moussa Sy, Web developper/Data Analyst",
+      name: "Welcome",
+      title: "I'm Moussa Sy -  Data Analyst",
+      title2: "Based in Paris, France",
       navDeployed: false,
       leave: null,
       disapear: null
@@ -107,6 +109,12 @@ export default {
   margin-top: 0;
   animation: arrival 4s forwards;
 }
+#title2 {
+  color: black;
+  animation: arrival 4s forwards;
+  text-align: center;
+  font-size: 1.8rem;
+}
 #presentation {
   border: #2c3e50 solid 1px;
   width: 100vw;
@@ -132,6 +140,9 @@ header {
   margin-top: 10%;
   width: auto;
 }
+.components p {
+  font-size: 2rem;
+}
 button {
   z-index: 2;
   padding: 3%;
@@ -155,10 +166,12 @@ p:hover {
   width: 25vw;
   margin: 0 auto;
   text-align: center;
+  font-size: 2rem;
 }
 #navDeployed {
   width: 20vw;
   margin: 0 auto;
+  font-size: 2rem;
 }
 /********************************************
 ******************** VIDEO ******************

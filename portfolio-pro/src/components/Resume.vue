@@ -27,26 +27,29 @@
 
 
         <div id="resume">
-            <img class="CV" src="../../public/CV-SY.png" alt="CV developpeur front-end Moussa Sy">
+            <img class="CV" src="../../public/CVpro.png" alt="CV Data analyst Moussa Sy">
             <section id="description"> 
                 <div v-if="!english" class="changeLanguage">
-                    <p>Développeur Front-end de Paris. En tant qu'ancien photographe professionnel, 
-                        créer du contenu attractif est une passion et trouver des moyens d’être plus 
-                        productif chaque jours est une mission. Après une formation réussie avec OpenClassrooms
-                        en tant que Développeur Web je continue de me former en UI/UX design et animations dans 
-                        le but d'atteindre un niveau Awwwards. Je suis ouvert à l'apprentissage de nouveaux frameworks
-                        ou languages. N'hésitez pas à me contacter, je suis disponible en remote ou sur site (Paris ou Toulouse).
+                    <p>
+                            Fort d'un parcours en développement web et animé par une passion pour les données, je suis entré dans le monde de l'analyse de données, apportant une perspective unique. Mes 2 années d'expérience en analyse web m'ont permis de combler le fossé entre les connaissances techniques et le comportement des utilisateurs, favorisant la compréhension de la façon dont les données se traduisent en actions concrètes.
+
+                            J'ai perfectionné mes compétences en programmation (y compris Python, SQL) au cours de mon parcours en data, construisant une base solide pour le nettoyage et l'analyse des données. Cette expertise technique s'est avérée précieuse dans mon rôle d'analyste web, où j'ai utilisé divers outils et techniques pour extraire des informations exploitables des données de trafic de site Web et de comportement des utilisateurs.
+
+                            L'identification des tendances, des modèles et des anomalies est devenue ma spécialité. Ces informations m'ont permis de collaborer avec les équipes et d'optimiser les performances du site Web, d'améliorer l'expérience utilisateur et, en fin de compte, d'atteindre les objectifs commerciaux. Cependant, ma véritable passion est de transformer des données brutes en récits convaincants.
+
+                            C'est là que mon expertise dans Tableau prend tout son sens. Je maîtrise la création de tableaux de bord, de graphiques et de rapports visuellement attrayants qui communiquent efficacement des histoires de données complexes à un public à la fois technique et non technique. L'adaptation des visualisations aux besoins spécifiques de l'entreprise garantit que les informations trouvent un écho auprès des parties prenantes et éclairent les décisions basées sur les données.
                     </p>
                 </div>
 
                 <div v-else>
-                    <p class="changeLanguage">Front-end developer from Paris. As a former professionnal photographer,
-                        creating attractive content is a passion and finding ways to be more 
-                        productive everyday is a mission. After a sucessful full course with 
-                        OpenClassrooms as a web developer I'm carrying on learning with UI/UX 
-                        design and animations to one day reach Awwards level. I'm open to learn
-                         new frameworks or programming languages. Do not hesitate to reach me, 
-                         I am available for a remote job or on site (Paris or Toulouse).</p>
+                    <p class="changeLanguage">
+                        With a background in web development and a passion for data, I transitioned into the world of data analysis, bringing a unique perspective to the table. My 2 years of web analytics experience allowed me to bridge the gap between technical knowledge and user behavior, fostering an understanding of how data translates into real-world actions.
+
+                        I honed my programming skills (including Python and SQL) during my data journey, building a strong foundation for data wrangling and analysis. This technical expertise proved invaluable in my web analyst role, where I utilized various tools and techniques to extract meaningful insights from website traffic and user behavior data.
+
+                        Identifying trends, patterns, and anomalies became my specialty. These insights empowered me to collaborate with teams and optimize website performance, enhance user experience, and ultimately drive business objectives. However, my true passion lies in transforming data into compelling narratives.
+
+                        This is where my expertise in Tableau shines. I excel at creating visually engaging dashboards, charts, and reports that effectively communicate complex data stories to both technical and non-technical audiences. Tailoring visualizations to specific business needs ensures that insights resonate with stakeholders and inform data-driven decisions.ork ethic, a collaborative spirit, and a continuous hunger for learning. I am proficient in communicating complex data concepts into clear and concise language, ensuring everyone is on the same page.</p>
                 </div>
 
             </section>
@@ -54,6 +57,18 @@
                 <section id="interests">
                     <h2>interests</h2>
                     <div id="galerie">
+
+
+                        <div class="galerieCard chess"> 
+                            <h3>Echecs <fa class="icon" icon="meteor"/></h3>
+                            <p v-if="!english" class="changeLanguage">Recente découverte devenue une passion par son coté stratégique</p>
+                            
+                            <p v-else class="changeLanguage">
+                                Recent discovery which became a passion through it's strategic aspect
+                            </p>
+                            <img src="../assets/chess.avif" alt="Photographie de moi même en activitéz">
+                        </div>
+
                         <div class="galerieCard astro">
                             <h3>Astronomie <fa class="icon" icon="meteor"/></h3>
                             <p v-if="!english" class="changeLanguage">Passion pour l'astronomie, suivi de l'actualité dans ce domaine 
