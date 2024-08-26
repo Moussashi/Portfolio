@@ -1,5 +1,11 @@
 <template>
+
+    <div id="languageBtn">
+        <button @click="toggleLang"> {{ language }} </button>
+    </div>
+    
     <div id="wrapper">
+        
         <!-- Title -->
         <section id="Title">
             <ul>
@@ -22,17 +28,18 @@
         </section>
 
         <!-- How i work -->
-        <h1 v-if="!french">My Projects</h1>
-        <h1 v-else>Mes Projets</h1>
+        <h1 v-if="english">My Projects</h1>
+        <h1 v-else>Mes projets</h1>
         <section>
             <div class="projects">
                 <div class="prjTxt">
-                    <h2>Groupomania</h2>
-                    <h4>Projet final du parcours Développeur Web Fullstack de OpenClassrooms, Création d'un réseau social d'entreprise avec authentification, forum permettant de poster des images/gif et textes et de se créer un compte</h4>
+                    <h2>Machine learning project</h2>
+                    <h4 v-if="english">Small Ml project, the goal was to create a model which could differenciate real and false bill</h4>
+                    <h4 v-else>Projet d'introduction au Machine learning, le but étant de créer un model pouvant différencier vrais et faux billets</h4>
                     <button class="btn1">Voir ce projet</button>
                 </div>
                 <div class="prjImg">
-                    <img src="../assets/groupo.png" alt="">
+                    <img src="../assets/machine.jpeg" alt="">
                 </div>
             </div>
 
@@ -40,12 +47,14 @@
 
             <div class="projects">
                 <div class="prjImg">
-                    <img src="../assets/howard.jpeg" alt="">
+                    <img src="../assets/map.png" alt="">
                 </div>
                 <div class="prjTxt">
-                    <h2>AstroBiblio</h2>
-                    <h4>Projet personnel de création d'un dictionnaire illustré de l'Univers</h4>
-                    <button class="btn2">voir ce projet</button>
+                    <h2>Visualisations</h2>
+                    <h4 v-if="english">Different visualisation created for projects or fun</h4>
+                    <h4 v-else>Differentes visualisations crées pour des projects ou pour le plaisir </h4>
+                    <button v-if="english" class="btn2"><a href="https://public.tableau.com/app/profile/moussa.sy/vizzes" target="blank_"></a>Check projects</button>
+                    <button v-else class="btn2"><a href="https://public.tableau.com/app/profile/moussa.sy/vizzes"></a>voir ces projets</button>
                 </div>
             </div>
 
@@ -76,6 +85,8 @@ export default {
     },
     data() {
         return {
+            english: true,
+            language: 'Fr',
             title: ['W', 'O', 'R', 'K'],
             french: true,
             navbar: {
@@ -83,6 +94,17 @@ export default {
                 work: 'Work',
                 resume: 'Resume',
                 contact: 'Contact'
+            }
+        }
+    },
+    methods: {
+        toggleLang() {
+            this.english = !this.english
+
+            if (this.english) {
+                this.language = 'En'
+            } else {
+                this.language = 'Fr'
             }
         }
     }
@@ -103,9 +125,22 @@ export default {
     src: url('../assets/Audrey-Normal.otf');
 }
 
+
+
+
 /*********************************************
 ****************GENERAL********************
 **********************************************/
+
+#languageBtn button {
+background-color: white;
+border-radius: 50%;
+padding: 1%;
+position: fixed;
+z-index: 99;
+top: 1%;
+right: 1%;
+}
 
 #wrapper {
     width: 100vw;
@@ -124,9 +159,12 @@ export default {
     font-size: 4vw;
     padding: 0;
 }
+#Title ul {
+    margin: 0;
+}
 h1 {
     text-align: center;
-    margin-bottom: 20%;
+    margin-bottom: 10%;
 }
 ul {
     display: flex;
@@ -258,6 +296,10 @@ img {
     margin-left: 4vh;
   } 
 
+  .changeLanguage {
+    animation: changeLanguage 1s forwards;
+}
+
 /*********************************************
 ****************ANIMATIONS********************
 **********************************************/
@@ -277,6 +319,17 @@ img {
     to {
         transform: translateY(-1vh);
         color: rgb(31, 29, 29);
+    }
+}
+
+@keyframes changeLanguage {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
     }
 }
 

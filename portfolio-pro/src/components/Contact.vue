@@ -44,41 +44,6 @@
       <custom-map id="map"></custom-map>
     </section>
     <p v-if="thanks">{{ message }}</p>
-
-    <div id="page">
-      <div id="banniere"></div>
-      <div id="cv">
-        <h3>titre</h3>
-
-        <section id="main">
-
-          <div>
-            <p>Experience</p>
-            <p class="para">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-              aperiam, deserunt saepe error temporibus blanditiis officia vero
-              nostrum impedit. Cupiditate odit voluptate accusantium dicta velit
-              repudiandae accusamus quasi, consequatur molestiae?
-            </p>
-          </div>
-
-
-          
-          <p class="para">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-            assumenda eius odio, quia atque distinctio quisquam similique vitae
-            blanditiis. Quam necessitatibus quibusdam aut suscipit rem aperiam
-            fugiat alias, natus accusamus!
-          </p>
-          <p class="para">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem non
-            libero nesciunt esse asperiores, maiores neque at? Commodi tempora
-            odit aperiam officiis quisquam, architecto quia doloremque nihil
-            tempore nemo quibusdam.
-          </p>
-        </section>
-      </div>
-    </div>
   </div>
 </template>
 

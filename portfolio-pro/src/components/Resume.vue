@@ -4,81 +4,97 @@
         <button @click="toggleLang"> {{ language }} </button>
     </div>
     <div class="wrapper">
-        <section id="Title">
-            <ul>
-                <li 
-                    v-for="tl in title" 
-                    :key="tl"
-                    class="letters"
-                    >
-                    <h1> {{ tl }} </h1>
-                </li>
-            </ul>
 
-        <nav-bar 
-            id="nav"
-            :home="navbar.home"
-            :work="navbar.work"
-            :contact="navbar.contact"></nav-bar>
+        <div class="title_wrapper">
 
-        </section>
+            <div class="title_description">
+                <section id="Title">
+                    <ul>
+                        <li 
+                            v-for="tl in title" 
+                            :key="tl"
+                            class="letters"
+                            >
+                            <h1> {{ tl }} </h1>
+                        </li>
+                    </ul>
+
+                <nav-bar 
+                    id="nav"
+                    :home="navbar.home"
+                    :work="navbar.work"
+                    :contact="navbar.contact"></nav-bar>
+
+                </section>
+
+                <section id="description"> 
+                    
+                <div v-if="!english" class="changeLanguage">
+                    <img src="../assets/plume.png" alt="plume en ecriture">
+                    
+                    <p>
+
+                            Fort d'un parcours en développement web et animé par une passion pour les données, je suis entré dans le monde de l'analyse de données, apportant une perspective unique.<br>
+                            
+                            Mes 2 années d'expérience en analyse web m'ont permis de combler le fossé entre les connaissances techniques et le comportement des utilisateurs, favorisant la compréhension de la façon dont les données se traduisent en actions concrètes.<br>
+
+                            J'ai perfectionné mes compétences en programmation (y compris Python, SQL) au cours de mon parcours en data, construisant une base solide pour le nettoyage et l'analyse des données. <br>Cette expertise technique s'est avérée précieuse dans mon rôle d'analyste web, où j'ai utilisé divers outils et techniques pour extraire des informations exploitables des données de trafic de site Web et de comportement des utilisateurs.
+
+                            L'identification des tendances, des modèles et des anomalies est devenue ma spécialité. Ces informations m'ont permis de collaborer avec les équipes et d'optimiser les performances du site Web, d'améliorer l'expérience utilisateur et, en fin de compte, d'atteindre les objectifs commerciaux. <br>Cependant, ma véritable passion est de transformer des données brutes en récits convaincants.
+
+                            C'est là que mon expertise dans Tableau prend tout son sens. Je maîtrise la création de tableaux de bord, de graphiques et de rapports visuellement attrayants qui communiquent efficacement des histoires de données complexes à un public à la fois technique et non technique. <br> L'adaptation des visualisations aux besoins spécifiques de l'entreprise garantit que les informations trouvent un écho auprès des parties prenantes et éclairent les décisions basées sur les données.
+                    </p>
+                </div>
+
+                <div v-else>
+                    <img src="../assets/plume.png" class="quill" alt="plume en ecriture">
+                    
+                    <p class="changeLanguage">
+                        With a background in web development and a passion for data, I transitioned into the world of data analysis, bringing a unique perspective to the table. <br> My 2 years of web analytics experience allowed me to bridge the gap between technical knowledge and user behavior, fostering an understanding of how data translates into real-world actions.
+
+                        I honed my programming skills (including Python and SQL) during my data journey, building a strong foundation for data wrangling and analysis.<br> This technical expertise proved invaluable in my web analyst role, where I utilized various tools and techniques to extract meaningful insights from website traffic and user behavior data.<br>
+
+                        Identifying trends, patterns, and anomalies became my specialty.<br> These insights empowered me to collaborate with teams and optimize website performance, enhance user experience, and ultimately drive business objectives. <br>However, my true passion lies in transforming data into compelling narratives.
+
+                        This is where my expertise in Tableau shines. I excel at creating visually engaging dashboards, charts, and reports that effectively communicate complex data stories to both technical and non-technical audiences. <br>Tailoring visualizations to specific business needs ensures that insights resonate with stakeholders and inform data-driven decisions work ethic, a collaborative spirit, and a continuous hunger for learning. I am proficient in communicating complex data concepts into clear and concise language, ensuring everyone is on the same page.</p>
+                </div>
+
+            </section>
+            </div>
+            <img src="../assets/CVpro.jpg" class="CV" alt="CV pro">
+
+        </div>
 
         <!-- RESUME -->
 
 
         <div id="resume">
-            <img class="CV" src="../../public/CVpro.png" alt="CV Data analyst Moussa Sy">
-            <section id="description"> 
-                <div v-if="!english" class="changeLanguage">
-                    <p>
-                            Fort d'un parcours en développement web et animé par une passion pour les données, je suis entré dans le monde de l'analyse de données, apportant une perspective unique. Mes 2 années d'expérience en analyse web m'ont permis de combler le fossé entre les connaissances techniques et le comportement des utilisateurs, favorisant la compréhension de la façon dont les données se traduisent en actions concrètes.
-
-                            J'ai perfectionné mes compétences en programmation (y compris Python, SQL) au cours de mon parcours en data, construisant une base solide pour le nettoyage et l'analyse des données. Cette expertise technique s'est avérée précieuse dans mon rôle d'analyste web, où j'ai utilisé divers outils et techniques pour extraire des informations exploitables des données de trafic de site Web et de comportement des utilisateurs.
-
-                            L'identification des tendances, des modèles et des anomalies est devenue ma spécialité. Ces informations m'ont permis de collaborer avec les équipes et d'optimiser les performances du site Web, d'améliorer l'expérience utilisateur et, en fin de compte, d'atteindre les objectifs commerciaux. Cependant, ma véritable passion est de transformer des données brutes en récits convaincants.
-
-                            C'est là que mon expertise dans Tableau prend tout son sens. Je maîtrise la création de tableaux de bord, de graphiques et de rapports visuellement attrayants qui communiquent efficacement des histoires de données complexes à un public à la fois technique et non technique. L'adaptation des visualisations aux besoins spécifiques de l'entreprise garantit que les informations trouvent un écho auprès des parties prenantes et éclairent les décisions basées sur les données.
-                    </p>
-                </div>
-
-                <div v-else>
-                    <p class="changeLanguage">
-                        With a background in web development and a passion for data, I transitioned into the world of data analysis, bringing a unique perspective to the table. My 2 years of web analytics experience allowed me to bridge the gap between technical knowledge and user behavior, fostering an understanding of how data translates into real-world actions.
-
-                        I honed my programming skills (including Python and SQL) during my data journey, building a strong foundation for data wrangling and analysis. This technical expertise proved invaluable in my web analyst role, where I utilized various tools and techniques to extract meaningful insights from website traffic and user behavior data.
-
-                        Identifying trends, patterns, and anomalies became my specialty. These insights empowered me to collaborate with teams and optimize website performance, enhance user experience, and ultimately drive business objectives. However, my true passion lies in transforming data into compelling narratives.
-
-                        This is where my expertise in Tableau shines. I excel at creating visually engaging dashboards, charts, and reports that effectively communicate complex data stories to both technical and non-technical audiences. Tailoring visualizations to specific business needs ensures that insights resonate with stakeholders and inform data-driven decisions.ork ethic, a collaborative spirit, and a continuous hunger for learning. I am proficient in communicating complex data concepts into clear and concise language, ensuring everyone is on the same page.</p>
-                </div>
-
-            </section>
+            
 
                 <section id="interests">
                     <h2>interests</h2>
                     <div id="galerie">
 
+                        <!--SECTION CHESS AND ASTRONOMY-->
+                        <div class="chess_astro">
+                            <div class="galerieCard chess"> 
+                                <h3>Chess <fa class="icon" icon="chess"/></h3>
+                                <p v-if="!english" class="changeLanguage">Recente découverte devenue une passion par son coté stratégique</p>
+                                
+                                <p v-else class="changeLanguage">
+                                    Recent discovery which became a passion through it's strategic aspect
+                                </p>
+                            </div>
 
-                        <div class="galerieCard chess"> 
-                            <h3>Echecs <fa class="icon" icon="meteor"/></h3>
-                            <p v-if="!english" class="changeLanguage">Recente découverte devenue une passion par son coté stratégique</p>
-                            
-                            <p v-else class="changeLanguage">
-                                Recent discovery which became a passion through it's strategic aspect
-                            </p>
-                            <img src="../assets/chess.avif" alt="Photographie de moi même en activitéz">
-                        </div>
-
-                        <div class="galerieCard astro">
-                            <h3>Astronomie <fa class="icon" icon="meteor"/></h3>
-                            <p v-if="!english" class="changeLanguage">Passion pour l'astronomie, suivi de l'actualité dans ce domaine 
-                                ainsi que pratique de l'astrophotographie au reflex. 
-                                Un amour de la photo de paysages qui s'est étendu au-delà de l'exosphère</p>
-                            
-                            <p v-else class="changeLanguage">
-                                Passion for astronomy, follow news and videos on the subject and beggin 
-                                astrophotography. A love for landscapes photos that went beyond the exosphere
-                            </p>
+                            <div class="galerieCard astro">
+                                <h3>Astronomy <fa class="icon" icon="meteor"/></h3>
+                                <p v-if="!english" class="changeLanguage">Passion pour l'astronomie depuis l'enfance 
+                                    Un amour des paysages qui s'est étendu au-delà de l'exosphère</p>
+                                
+                                <p v-else class="changeLanguage">
+                                    Passion for astronomy since childhood. A love for landscapes that went beyond the exosphere
+                                </p>
+                            </div>
                         </div>
                         
                         <div class="galerieCard bball">
@@ -107,7 +123,7 @@
                                     Played basketball in competition and as a hobby since 2003, follow sports actuality daily 
                                     (soccer, boxing, martial arts...). Martial artist (Boxing, Vo-Vietnam, Hapkido, brazilian Jiu jitsu)
                                 </p>
-                                <img src="../assets/bballMe.jpeg" alt="Photographie de moi même en activitéz">
+                                <img src="../assets/bballMe.jpeg" alt="Photographie de moi même en activité">
                             </div>
                             
                         </div>
@@ -118,8 +134,9 @@
         </div>
         
     </div>
-    
-    <h2 class="portraitTtl">Portrait Photography</h2>
+    <div class="portraitTtl">
+        <h2>Portrait Photography</h2>
+    </div>
 
     <div aria-label="portrait photos" class="carousel" data-carousel>
         <button class="carousel-button prev" data-carousel-button="prev" >&#8666;</button>
@@ -249,12 +266,25 @@ export default {
     background: rgb(239,228,221);
     background: linear-gradient(90deg, rgba(239,228,221,1) 43%, rgba(255,255,255,1) 88%);
 }
+.title_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10vh;
+}
+.title_description {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    width: 90vw;
+}
 #resume {
-    margin-top: 10vh;
-    width: 80vw;
+    margin-top: 5vh;
+    width: 70vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 1.2rem;
 }
 #resume button {
     -webkit-box-shadow: 13px 12px 15px 5px rgba(92,92,92,0.58); 
@@ -265,7 +295,7 @@ export default {
     box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 13px 12px 15px 5px rgba(92,92,92,0);
 }
 .CV {
-    width: 80%;
+    width: 70%;
     height: auto;
     border: none;
     position: relative;
@@ -278,6 +308,7 @@ export default {
     z-index: 2;
 }
 #description {
+    margin-top: 20%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -289,14 +320,18 @@ export default {
 #description p {
     animation: paragraphs 2s forwards;
     padding: 5%;
+    font-size: 1.2rem;
+}
+.quill {
+    width: 10vw;
 }
 h3, h2{
     font-family: 'Monoton';
 }
 h2 {
     margin: auto;
-    font-size: 3rem;
-    padding: 6%;
+    font-size: 5rem;
+    padding: 5%;
 }
 #interests {
     width: 100vw;
@@ -313,19 +348,33 @@ h2 {
 .galerieCard {
     display: flex;
 }
+.chess {
+    background-image: url('../assets/chess.png');
+    background-size: cover;
+    color: white;
+    width: 50vw;
+}
+.chess_astro {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
 .astro {
     background-image: url('../assets/earth.jpeg');
+    background-size: cover;
     color: white;
     display: flex;
     flex-direction: column;
     height: 50vh;
+    width: 50vw;
 }
 .astro p {
     width: 20%;
 }
 .bball {
     display: flex;
-    background-color: white;
+    background-color: black;
+    color: white;
     height: 60vh;
 }
 .bball img {
@@ -348,9 +397,13 @@ h2 {
     background-color: rgb(1,1,1, 0.6);
 }
 .portraitTtl {
+    width: 100%;
     position: relative;
-    margin: auto;
     padding-top: 20vh;
+}
+.portraitTtl {
+    margin: auto;
+    position: relative;
 }
 #languageBtn button {
 background-color: white;
@@ -435,6 +488,10 @@ right: 1%;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    height: 5vh;
+    margin-top: 50px;
+    padding-right: 5% ;
+
 }
 h3 {
     font-size: 2vw;
@@ -451,6 +508,9 @@ li {
 li:hover {
     animation: letters 0.5s forwards;
 }
+.letters:hover {
+    animation: letters 0.5s ease-in-out
+}
 
 /************************************
 ************* ANIMATIONS ************
@@ -464,6 +524,15 @@ li:hover {
     to {
         opacity: 1;
         transform: translateX(0px);
+    }
+}
+@keyframes letters {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-1vh);
+        color: rgb(31, 29, 29);
     }
 }
 
@@ -485,7 +554,7 @@ li:hover {
 
 @media only screen and (min-width: 1224px) {
     #resume {
-        width: 60vw;
+        width: 80vw;
     }
 
 }
