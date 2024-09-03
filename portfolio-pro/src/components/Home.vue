@@ -12,8 +12,8 @@
         </video>
         <div class="header">
           <h3 id="title"> {{ title }} </h3>
-          <h1 id="name"> {{ name }} </h1>
           <h4 id="title2"> {{ title2 }} </h4>
+          <h1 id="name"> {{ name }} </h1>
         </div>
 
 
@@ -46,7 +46,7 @@ export default {
   data() {
     return {
       name: "Welcome",
-      title: "I'm Moussa Sy -  Data Analyst",
+      title: "I'm Moussa Sy -  Web Analyst",
       title2: "Based in Paris, France",
       navDeployed: false,
       leave: null,
